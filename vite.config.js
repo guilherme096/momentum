@@ -12,6 +12,12 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      includeAssets: [
+        "favicon.ico",
+        "logo_azul.png",
+        "robots.txt",
+        "site.webmanifest",
+      ],
       manifest: {
         icons: [
           {
