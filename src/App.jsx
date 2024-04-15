@@ -1,11 +1,12 @@
-function App() {
-  return (
-    <>
-      <div className="mx-auto w-fit text-4xl">
-      Momentum
-      </div>
-    </>
-  )
-}
+import { BrowserRouter } from "react-router-dom";
+import Router from "./Router";
 
-export default App
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
+};
+
+export default App;
