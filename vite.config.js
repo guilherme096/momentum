@@ -12,7 +12,15 @@ export default defineConfig({
         enabled: true,
       },
       manifest: {
-        icons: [],
+        icons: [
+          {
+            src: "logo_azul.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
+        theme_color: "#000000",
       },
     }),
   ],
