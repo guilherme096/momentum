@@ -4,6 +4,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/",
   plugins: [
     react(),
     VitePWA({
@@ -11,6 +12,12 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      includeAssets: [
+        "favicon.ico",
+        "logo_azul.png",
+        "robots.txt",
+        "site.webmanifest",
+      ],
       manifest: {
         icons: [
           {
