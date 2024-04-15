@@ -4,5 +4,15 @@ export default {
     theme: {
         extend: {},
     },
+    daisyui: {
+        themes: [
+            {
+              light: {
+                ...require("daisyui/src/theming/themes")["winter"],
+                "primary": "#2596be",
+              },
+            },
+          ],
+    },
     plugins: [require("daisyui")],
 };
