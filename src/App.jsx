@@ -3,7 +3,7 @@ import Router from "./Router";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/momentum">
       <Router />
     </BrowserRouter>
   );

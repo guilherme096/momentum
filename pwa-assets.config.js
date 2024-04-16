@@ -5,5 +5,5 @@ import {
 
 export default defineConfig({
   preset,
-  images: ["public/vite.svg", "public/logo_azul.png"],
+  images: ["public/logo_azul.png"],
 });
