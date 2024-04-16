@@ -1,11 +1,11 @@
 import Navbar from '../../components/Navbar';
 import CardLayout from '../../layouts/CardLayout';
+import PageLayout from '../../layouts/PageLayout';
 
 export default function Home() {
     return (
-        <div className="h-screen w-full">
-            <Navbar></Navbar>
-            <div className="flex flex-row justify-between h-fit w-full py-8">
+        <PageLayout>
+            <div className="flex flex-row justify-between h-fit w-full py-8 overflow-scroll">
                 <CardLayout>
                     test
                 </CardLayout>
@@ -16,6 +16,6 @@ export default function Home() {
                     test
                 </CardLayout>
             </div>
-        </div>
+        </PageLayout>
     );
 }
