@@ -1,5 +1,8 @@
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
+import TrainingSupport from "./pages/TrainingSupport/TrainingSupport"
+import Profile from "./pages/Profile/Profile"
+
 
 const pagesData = [
   {
@@ -14,12 +17,12 @@ const pagesData = [
   },
   {
     path: "training-support",
-    element: <></>,
+    element: <TrainingSupport />,
     title: "training-support",
   },
   {
     path: "profile",
-    element: <></>,
+    element: <Profile/>,
     title: "profile",
   }
 ];
