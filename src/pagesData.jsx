@@ -12,6 +12,16 @@ const pagesData = [
     element: <Login />,
     title: "login",
   },
+  {
+    path: "training-support",
+    element: <></>,
+    title: "training-support",
+  },
+  {
+    path: "profile",
+    element: <></>,
+    title: "profile",
+  }
 ];
 
 export default pagesData;
