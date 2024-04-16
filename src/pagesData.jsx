@@ -14,12 +14,12 @@ const pagesData = [
   },
   {
     path: "training-support",
-    element: <TrainingSupport />,
+    element: <></>,
     title: "training-support",
   },
   {
     path: "profile",
-    element: <Profile />,
+    element: <></>,
     title: "profile",
   }
 ];
