@@ -1,3 +1,4 @@
+import Calendar from '../../components/Calendar';
 import Navbar from '../../components/Navbar';
 import CardLayout from '../../layouts/CardLayout';
 
@@ -16,6 +17,7 @@ export default function Home() {
                     test
                 </CardLayout>
             </div>
+            <Calendar/>
         </div>
     );
 }
