@@ -12,7 +12,7 @@
 - `main`: Production branch
 - `feature/feature-name`: Feature branch
   - Example: `feature/login`
-  - Example: `feature/component/card`
+  - Example: `feature/component/nav`
 - `bugfix/bug-name`: Bugfix branch
 
 ### How to use branches
