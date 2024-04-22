@@ -1,5 +1,5 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fontawesome/react-fontawesome';
+import { faCog } from '@fontawesome/free-solid-svg-icons';
 
 
 export default function Header() {
