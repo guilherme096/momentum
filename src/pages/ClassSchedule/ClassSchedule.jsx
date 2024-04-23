@@ -11,7 +11,7 @@ export default function ClassSchedule({class_obj}) {
     }
     
     return (
-        <PageLayout>
+        <PageLayout pageName="Classes">
             <div className='flex flex-col'>
                 <div className="rounded-md overflow-clip">
                     <img src={class_obj.image} alt="classImage" style={{ width: '100%' }}/>
