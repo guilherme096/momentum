@@ -23,7 +23,7 @@ export default function ClassSchedule({class_obj}) {
                 <div>
                     <p className="text-xl font-light mt-2 text-justify">{class_obj.description}</p>
                 </div>
-                <div className="flex fixed w-full justify-between items-center bottom-14 left-0 px-5 bg-white">
+                <div className="flex fixed w-full justify-between items-center bottom-20 left-0 px-8 bg-white">
                     <div className="stats lg:stats-horizontal shadow-sm">
 
                         <div className="stat text-center">
@@ -38,7 +38,7 @@ export default function ClassSchedule({class_obj}) {
                         </div>      
                     </div>
 
-                    <button className="btn-lg bg-primary text-white font-bold rounded" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
+                    <button className="btn-md bg-primary text-white font-bold rounded" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
                     <ConfirmationModal></ConfirmationModal>
                 </div>
             </div>
