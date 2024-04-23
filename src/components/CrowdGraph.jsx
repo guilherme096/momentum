@@ -123,11 +123,10 @@ const LineGraph = () => {
     display: "",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: "0rem",
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} className="pt-4">
       <div style={trafficStyle}>Current Traffic: {currentTraffic}</div>
       <div style={graphStyle}>
         <Line id="home" options={options} data={canvasData}></Line>
