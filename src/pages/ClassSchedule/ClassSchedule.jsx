@@ -14,7 +14,7 @@ export default function ClassSchedule({class_obj}) {
         <PageLayout pageName="Classes">
             <div className='flex flex-col'>
                 <div className="rounded-md overflow-clip">
-                    <img src={class_obj.image} alt="classImage" style={{ width: '100%' }}/>
+                    <img src={class_obj.image} alt="classImage" style={{ width: '100%', height:'200px'}}/>
                 </div>
                 <div className="flex justify-between items-end ">
                     <h1 className="text-3xl font-bold mt-2">{class_obj.name}</h1>
@@ -27,13 +27,13 @@ export default function ClassSchedule({class_obj}) {
                     <div className="stats lg:stats-horizontal shadow-sm">
 
                         <div className="stat text-center">
-                            <div className="stat-title mb-4 text-sm">Timestamp</div>
-                            <div className="stat-value text-xl items-center text-center">{class_obj.date}</div>
-                            <div className="stat-value text-xl items-center text-center mb-2">{class_obj.time}</div>
+                            <div className="stat-title mb-4 text-xs">Timestamp</div>
+                            <div className="stat-value text-lg items-center text-center">{class_obj.date}</div>
+                            <div className="stat-value text-lg items-center text-center mb-2">{class_obj.time}</div>
                         </div>
                         
                         <div className="stat text-center">
-                            <div className="stat-title items-center text-sm">Lotation</div>
+                            <div className="stat-title items-center text-xs">Lotation</div>
                             <div className="stat-value radial-progress text-sm ml-1 mt-2" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
                         </div>      
                     </div>
