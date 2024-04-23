@@ -1,7 +1,15 @@
 import PageLayout from '../../layouts/PageLayout';
+import ConfirmationModal from '../../components/ConfirmationModal';
+import { useRef } from 'react';
 
 export default function ClassSchedule({class_obj}) {
     const n = class_obj.ocupation_math;
+    const ConfirmationModalRef = useRef(null);
+
+    const handleModal = () => {
+        ConfirmationModalRef.current.showModal();
+    }
+    
     return (
         <PageLayout>
             <div className='flex flex-col'>
@@ -31,7 +39,8 @@ export default function ClassSchedule({class_obj}) {
                     </div>      
                 </div>
 
-                <button className="btn-lg bg-primary text-white font-bold rounded m-10 ">Add</button>
+                <button className="btn-lg bg-primary text-white font-bold rounded m-10" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
+                <ConfirmationModal></ConfirmationModal>
             </div>
             </div>
         </PageLayout>
