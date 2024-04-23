@@ -3,7 +3,7 @@ import CardLayout from '../../layouts/CardLayout';
 
 export default function Profile() {
     return (
-        <PageLayout>
+        <PageLayout pageName="Profile">
             <div className='flex justify-between items-center m-9'>
                 <div className='flex justify-between items-center'>
 

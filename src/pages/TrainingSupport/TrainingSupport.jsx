@@ -3,7 +3,7 @@ import CardLayout from '../../layouts/CardLayout';
 
 export default function TrainingSupport() {
     return (
-        <PageLayout>
+        <PageLayout pageName="Training Support">
             <h1 className="text-2xl font-bold mt-2">Timer</h1>
             <div className='flex flex-col items-center justify-between'>
                 <h1 className="text-7xl font-bold"> 00:00</h1>

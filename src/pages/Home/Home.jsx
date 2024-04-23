@@ -6,7 +6,7 @@ import CrowdGraph from '../../components/CrowdGraph'
 
 export default function Home() {
     return (
-        <PageLayout>
+        <PageLayout pageName="Home">
             <QRCard />
             <CrowdGraph></CrowdGraph>
         </PageLayout>
