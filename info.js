@@ -3,7 +3,7 @@ export const classes = [
         "id": 1,
         "name": "CrossFit",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nunc, in eget amet. Eget amet, doloe sit ipsum elit. Adiposcing amet doloe ipsim consetetur.",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/1",
         "date" : "April 12th",
         "ocupation_math": 12/20,
         "ocupation": "12/20",
