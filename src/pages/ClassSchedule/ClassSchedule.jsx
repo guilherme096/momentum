@@ -23,7 +23,7 @@ export default function ClassSchedule({class_obj}) {
                 <div>
                     <p className="text-xl font-light mt-2 text-justify">{class_obj.description}</p>
                 </div>
-                <div className="flex fixed bottom-24 items-end">
+                <div className="flex fixed bottom-24 items-end left-0">
                 <div className="stats lg:stats-horizontal shadow-sm">
 
                     <div className="stat items-center justify-center text-center">
