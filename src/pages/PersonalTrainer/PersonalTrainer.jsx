@@ -4,7 +4,7 @@ import CardLayout from '../../layouts/CardLayout';
 export default function PersonalTrainer() {
     return (
         <PageLayout pageName="Personal Trainer">
-            <div className='flex justify-between items-center m-9'>
+            <div className='flex justify-between items-center ml-9 mr-9 mb-9'>
                 <div className='flex justify-between items-center'>
 
                     <div className="avatar">

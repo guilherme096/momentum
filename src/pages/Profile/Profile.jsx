@@ -4,7 +4,7 @@ import CardLayout from '../../layouts/CardLayout';
 export default function Profile() {
     return (
         <PageLayout pageName="Profile">
-            <div className='flex justify-between items-center m-9'>
+            <div className='flex justify-between items-center ml-9 mr-9 mb-9'>
                 <div className='flex justify-between items-center'>
 
                     <div className="avatar">
@@ -29,8 +29,8 @@ export default function Profile() {
 
             </div>
 
-                <div className='flex justify-between items-center mr-6 ml-6 mt-5'>    
-                    <div className="radial-progress" style={{"--value":70, "--thickness": "6px", "--size": "6rem" }} role="progressbar">4/12</div>
+                <div className='flex justify-between items-center mr-8 ml-8 mt-5'>    
+                    <div className="radial-progress" style={{"--value":70, "--thickness": "6px", "--size": "5rem" }} role="progressbar">4/12</div>
 
                     <div className="flex flex-col items-start justify-between">
                         <h1 className='text-xl'>Goal: 12 p/month</h1>
