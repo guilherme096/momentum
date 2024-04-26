@@ -4,6 +4,7 @@ import TrainingSupport from "./pages/TrainingSupport/TrainingSupport"
 import Profile from "./pages/Profile/Profile"
 import ClassSchedule from "./pages/ClassSchedule/ClassSchedule"
 import PersonalTrainer from "./pages/PersonalTrainer/PersonalTrainer"
+import StartTrain from "./pages/TrainingSupport/StartTrain"
 import { classes } from "../public/info";
 
 const myclass = classes[0];
@@ -38,7 +39,13 @@ const pagesData = [
     path: "personal-trainer",
     element: <PersonalTrainer />,
     title: "personal-trainer",
+  },
+  {
+    path: "start-train",
+    element: <StartTrain/>,
+    title: "start-train",
   }
+
 
 ];
 
