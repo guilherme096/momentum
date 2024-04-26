@@ -15,7 +15,7 @@ export default function Profile() {
 
                 </div>
                 <div className="flex flex-col items-start justify-center">
-                    <h1 className="text-3xl font-bold mt-2">Nuno Santos</h1>
+                    <h1 className="text-2xl font-bold mt-2">Nuno Santos</h1>
                     <h3 className='stat-title text-xl mb-1'>Premium user</h3>
                 </div>
             </div>
