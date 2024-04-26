@@ -43,7 +43,7 @@ export default function Profile() {
             <h1 className="text-2xl font-bold mt-8"> Bio Metrics</h1>
                 <div className='flex flex-row flex-wrap justify-around items-center mt-5'>  
                 <CardLayout>
-                    +
+        +
                 </CardLayout>
 
                 <CardLayout>
