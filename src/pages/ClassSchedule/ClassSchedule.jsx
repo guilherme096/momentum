@@ -1,12 +1,20 @@
 import PageLayout from '../../layouts/PageLayout';
+import ConfirmationModal from '../../components/ConfirmationModal';
+import { useRef } from 'react';
 
 export default function ClassSchedule({class_obj}) {
     const n = class_obj.ocupation_math;
+    const ConfirmationModalRef = useRef(null);
+
+    const handleModal = () => {
+        ConfirmationModalRef.current.showModal();
+    }
+    
     return (
-        <PageLayout>
+        <PageLayout pageName="Classes">
             <div className='flex flex-col'>
                 <div className="rounded-md overflow-clip">
-                    <img src={class_obj.image} alt="classImage" style={{ width: '100%' }}/>
+                    <img src={class_obj.image} alt="classImage" style={{ width: '100%', height:'200px'}}/>
                 </div>
                 <div className="flex justify-between items-end ">
                     <h1 className="text-3xl font-bold mt-2">{class_obj.name}</h1>
@@ -15,24 +23,28 @@ export default function ClassSchedule({class_obj}) {
                 <div>
                     <p className="text-xl font-light mt-2 text-justify">{class_obj.description}</p>
                 </div>
-                <div className="flex fixed bottom-24 items-end">
-                <div className="stats lg:stats-horizontal shadow-sm">
+                <div className="flex fixed w-full justify-between items-center bottom-20 left-0 px-8 bg-white">
+                    <div className="stats lg:stats-horizontal shadow-md">
 
-                    <div className="stat items-center justify-center text-center">
-                        <div className="stat-title mb-4 text-sm">Timestamp</div>
-                        <div className="stat-value text-xl items-center text-center">{class_obj.date}</div>
-                        <div className="stat-value text-xl items-center text-center mb-2">{class_obj.time}</div>
+                        <div className="stat text-center">
+                            <div className="stat-title mb-4 text-xs">Timestamp</div>
+                            <div className="stat-value text-sm items-center text-center">{class_obj.date}</div>
+                            <div className="stat-value text-sm items-center text-center mb-2">{class_obj.time}</div>
+                        </div>
+                        
+                        <div className="stat text-center">
+                            <div className="stat-title items-center text-xs">Lotation</div>
+                            <div className="stat-value radial-progress text-sm ml-1 mt-2" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
+                        </div>  
 
+                        <div className="stat text-center items-center">
+                            <button className="btn-md bg-primary text-white font-bold rounded" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
+                            <ConfirmationModal></ConfirmationModal>
+                        </div>    
                     </div>
-                    
-                    <div className="stat text-center">
-                        <div className="stat-title items-center text-sm">Lotation</div>
-                        <div className="stat-value radial-progress text-sm ml-1 mt-2" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
-                    </div>      
-                </div>
 
-                <button className="btn-lg bg-primary text-white font-bold rounded m-10 ">Add</button>
-            </div>
+                    
+                </div>
             </div>
         </PageLayout>
     );
