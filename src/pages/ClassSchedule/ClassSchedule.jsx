@@ -44,7 +44,7 @@ export default function ClassSchedule({class_obj}) {
             </div>  
 
 
-            <div className="stat flex justify-center items-center">
+            <div className="stat flex justify-center items-center h-full">
                 <button className="btn bg-primary text-white font-bold rounded w-16 h-16 justify-center items-center" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
                 
             </div>    
