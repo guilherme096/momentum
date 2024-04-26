@@ -1,8 +1,10 @@
-export default function CardLayout({children, bgColor = "bg-neutral-800"}) {
-    const styling = `p-4 rounded-lg m-2 min-h-32 min-w-32 w-fit h-fit drop-shadow-lg ${bgColor}`;
+export default function CardLayout({children, bgColor = "bg-neutral-200", width = "w-32", height = "h-32"}) {
+    const styling = `card rounded-lg m-2 max-${width} max-${height}  w-fit h-fit drop-shadow-lg ${bgColor} aspect-square`;
     return(
         <div className={styling}>
-            {children} 
+            <div className="card-body">
+                {children} 
+            </div>
         </div>
     )
 }
