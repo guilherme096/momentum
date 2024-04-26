@@ -33,9 +33,9 @@ export default function QRCard() {
     return (
         <>
         <div className="bg-transparent h-fit w-fit mx-auto rounded-md">
-            <div className="card w-32 h-32 bg-transparent rounded-lg mx-auto flex flex-col justify-center align-middle">
-               <div ref={qrContainer}  className="bg-qr-code min-w-32 bg-no-repeat bg-center bg-contain absolute h-full w-full mx-auto blur-md bg-base-100"></div>
-                <button ref={qrButton} className="text-primary text-2xl text-center h-full w-full font-bold z-10" onClick={handleStart}>Show QR Code</button> 
+            <div className="card w-full h-32 bg-transparent rounded-lg mx-auto flex flex-row justify-between align-middle items-center">
+               <div ref={qrContainer}  className="bg-qr-code min-w-32 bg-no-repeat bg-center bg-contain h-full w-full blur-sm bg-base-100"></div>
+                <button ref={qrButton} className="btn btn-outline ml-8 shadow-md" onClick={handleStart}>Show QR Code</button> 
             </div>
         </div>
         <div className='mx-auto w-fit mt-4 hidden' ref={timerContainer}>
