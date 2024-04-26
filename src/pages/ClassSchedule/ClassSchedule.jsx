@@ -11,8 +11,9 @@ export default function ClassSchedule({class_obj}) {
     }
     
     return (
+        <>
         <PageLayout pageName="Classes">
-            <div className='flex flex-col'>
+            <div className='flex flex-col max-w-full'>
                 <div className="rounded-md overflow-clip">
                     <img src={class_obj.image} alt="classImage" style={{ width: '100%', height:'200px'}}/>
                 </div>
@@ -23,29 +24,31 @@ export default function ClassSchedule({class_obj}) {
                 <div>
                     <p className="text-xl font-light mt-2 text-justify">{class_obj.description}</p>
                 </div>
-                <div className="flex fixed w-full justify-between items-center bottom-20 left-0 px-8 bg-white">
-                    <div className="stats lg:stats-horizontal shadow-md">
-
-                        <div className="stat text-center">
-                            <div className="stat-title mb-4 text-xs">Timestamp</div>
-                            <div className="stat-value text-sm items-center text-center">{class_obj.date}</div>
-                            <div className="stat-value text-sm items-center text-center mb-2">{class_obj.time}</div>
-                        </div>
-                        
-                        <div className="stat text-center">
-                            <div className="stat-title items-center text-xs">Lotation</div>
-                            <div className="stat-value radial-progress text-sm ml-1 mt-2" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
-                        </div>  
-
-                        <div className="stat text-center items-center">
-                            <button className="btn-md bg-primary text-white font-bold rounded" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
-                            <ConfirmationModal></ConfirmationModal>
-                        </div>    
-                    </div>
-
-                    
-                </div>
             </div>
+            <ConfirmationModal></ConfirmationModal>
         </PageLayout>
+        <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3 bg-white">
+        <div className="stats lg:stats-horizontal shadow-md min-w-full items-center">
+
+            <div className="stat text-center justify-center">
+                <div className="stat-title mb-4 text-xs">Timestamp</div>
+                <div className="stat-value text-sm items-center text-center">{class_obj.date}</div>
+                <div className="stat-value text-sm items-center text-center mb-2">{class_obj.time}</div>
+            </div>
+            
+            <div className="stat text-center justify-center">
+                <div className="stat-title items-center text-xs justify-center">Lotation</div>
+                <div className="stat-value radial-progress text-sm ml-1 mt-2 items-center justify-center" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
+            </div>  
+
+            <div className="stat text-center items-center justify-center">
+                <button className="btn bg-primary text-white font-bold rounded" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
+                
+            </div>    
+        </div>
+
+        
+    </div>
+    </>
     );
 }
