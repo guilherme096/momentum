@@ -1,8 +1,10 @@
 import PageLayout from '../../layouts/PageLayout';
 import CardLayout from '../../layouts/CardLayout';
+import EndTrainingModal from '../../components/EndTrainingModal';
 
 export default function TrainingSupport() {
     return (
+        <>
         <PageLayout pageName="Training Support">
             <h1 className="text-2xl font-bold mt-2">Timer</h1>
             <div className='flex flex-col items-center justify-between'>
@@ -37,6 +39,13 @@ export default function TrainingSupport() {
                     Chest Press
                 </CardLayout>
             </div>
+            <EndTrainingModal></EndTrainingModal>
+            
         </PageLayout>
+
+        <div className="flex fixed justify-end items-center bottom-20 w-full pr-3 pl-3">
+            <button className='btn btn-error btn-outline  font-boldrounded mt-2 w-full' onClick={()=>document.getElementById('my_modal_2').showModal()}> End Training Session</button>
+        </div>
+        </>
     );
 }
