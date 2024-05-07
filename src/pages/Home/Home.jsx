@@ -23,7 +23,7 @@ export default function Home() {
             <CrowdGraph></CrowdGraph>
 
                 <Link to="/class-schedule">
-                    <button className='btn bg-primary'>O rui é lindo :3</button>
+                    <button className='btn bg-primary'>class schedule</button>
                 </Link>
             
 
