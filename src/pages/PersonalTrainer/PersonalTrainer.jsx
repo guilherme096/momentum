@@ -1,5 +1,5 @@
 import PageLayout from '../../layouts/PageLayout';
-import CardLayout from '../../layouts/CardLayout';
+import HeatCalendar from '../../components/HeatCalendar';
 
 export default function PersonalTrainer() {
     return (
@@ -38,6 +38,7 @@ export default function PersonalTrainer() {
                 <div className="text-lg mt-3">plan: leg day</div>
 
             </div>
+            <HeatCalendar/>
 
         </PageLayout>
     );
