@@ -30,15 +30,16 @@ export default function StartTrain() {
     return (
         <PageLayout pageName="Training Support">
             <div className='flex flex-col justify-center align-middle items-center h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                <div className='flex justify-center items-center mb-5'>
+                <div className='flex justify-center items-center mb-6'>
                     <h1 className='text-4xl font-bold'>New Session</h1>
                 </div>
-                <div className='my-10 pl-5'>
-                    <label className='flex items-center'>
-                        <input type="checkbox" className="checkbox mr-2" />
-                        <span>Time this session</span>
+                <div className='pl-5'>
+                    <label>
+                        <div>
+                            Training Preset
+                        </div>
                     </label>
-                    <div className="pt-4 w-64">
+                    <div className="w-50">
                         <Combobox value={selectedPerson} onChange={setSelectedPerson}>
                             <div className="relative mt-1">
                                 <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
@@ -96,9 +97,13 @@ export default function StartTrain() {
                             </div>
                         </Combobox>
                     </div>
-                    <div className='pt-10 items-end justify-end flex'>
+                    <label className='flex items-center mt-6'>
+                        <input type="checkbox" className="checkbox mr-2" />
+                        <span>Time this session</span>
+                    </label>
+                    <div className='pt-10 justify-center flex w-full'>
                         <Link to="/training-support">
-                            <button className='btn btn-wide btn-primary mx-auto btn-xl'>Start</button>
+                            <button className='btn btn-wide btn-primary mx-auto btn-xl text-white'>Start</button>
                         </Link>
                     </div>
                 </div>
