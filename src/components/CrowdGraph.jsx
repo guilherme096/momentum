@@ -112,7 +112,7 @@ const LineGraph = () => {
   };
 
   const trafficStyle = {
-    fontSize: "1rem",
+    fontSize: "1.2rem",
     color: "#485B75",
     fontWeight: "bold",
     marginRight: "0.5rem",
@@ -127,7 +127,7 @@ const LineGraph = () => {
 
   return (
     <div style={containerStyle} className="pt-4">
-      <div style={trafficStyle}>Current Traffic: {currentTraffic}</div>
+      <div style={trafficStyle} >Current Traffic: {currentTraffic}</div>
       <div style={graphStyle}>
         <Line id="home" options={options} data={canvasData}></Line>
       </div>
