@@ -1,5 +1,6 @@
 import PageLayout from '../../layouts/PageLayout';
 import CardLayout from '../../layouts/CardLayout';
+import HeatCalendar from '../../components/HeatCalendar';
 
 export default function Profile() {
     return (
@@ -39,6 +40,9 @@ export default function Profile() {
                     </div>
 
                 </div>
+            </div>
+            <div className='my-8 flex flex-col align-middle items-center'>
+                <HeatCalendar/>
             </div>
             <h1 className="text-2xl font-bold mt-8"> Bio Metrics</h1>
                 <div className='flex flex-row flex-wrap justify-around items-center mt-5'>  
