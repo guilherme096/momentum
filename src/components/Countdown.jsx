@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const TIME = 5;
+const TIME = 20;
 
 export default function Countdown({isActive, completedCallback}){
     const [counter, setCounter] = useState(TIME);

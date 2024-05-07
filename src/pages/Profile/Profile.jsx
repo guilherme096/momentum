@@ -29,7 +29,7 @@ export default function Profile() {
 
             </div>
 
-                <div className='flex justify-between items-center mr-8 ml-8 mt-5'>    
+                <div className='flex justify-between items-center mr-6 ml-6 mt-5'>    
                     <div className="radial-progress" style={{"--value":70, "--thickness": "6px", "--size": "5rem" }} role="progressbar">4/12</div>
 
                     <div className="flex flex-col items-start justify-between">
