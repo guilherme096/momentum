@@ -5,7 +5,7 @@ import Profile from "./pages/Profile/Profile"
 import ClassSchedule from "./pages/ClassSchedule/ClassSchedule"
 import PersonalTrainer from "./pages/PersonalTrainer/PersonalTrainer"
 import StartTrain from "./pages/TrainingSupport/StartTrain"
-import { classes } from "../public/info";
+import { classes } from "./info";
 
 const myclass = classes[0];
 
