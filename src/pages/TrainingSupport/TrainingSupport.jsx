@@ -16,7 +16,7 @@ export default function TrainingSupport() {
                 </div>
                 <div className='w-1/2 p-3 pl-4'>
                     <button className='btn btn-error btn-outline font-boldrounded mt-2 w-full'>Skip</button>
-                    <button className='btn btn-primary font-boldrounded mt-2 w-full text-white'>Next</button>
+                    <button className='btn btn-primary font-boldrounded mt-2 w-full text-white'onClick={()=>document.getElementById('exercise_modal').showModal()} >Next</button>
                 </div>
             </div>
             <h1 className="text-2xl font-bold mt-2">Help</h1>
@@ -61,6 +61,63 @@ export default function TrainingSupport() {
                 </CardLayout>
             </div>
             <EndTrainingModal></EndTrainingModal>
+        <dialog id="exercise_modal" className="modal">
+          <div className="modal-box">
+            <h3 className="font-bold text-xl">Complete Exercise</h3>
+            <div className="p-0 mt-6">
+                <p className="text-lg font-bold ml-3">Set 1</p>
+                <div className='rounded-md w-full shadow-lg h-fit mt-1'>
+                    <div className='flex flex-row justify-between p-3'>
+                        <div>
+                            <p className='text-lg font-bold'>Reps</p>
+                           <input type="text" placeholder="12" value="12" className="w-[20px] border-2 text-center rounded-sm" /> <p className='text-lg inline'> / 12</p>
+                        </div>
+                        <div>
+                            <p className='text-lg font-bold'>Weight</p>
+                           <input type="text" placeholder="20kg" value="20" className="w-[24px] border-2 text-center rounded-sm" /> <p className='text-lg inline'>kg / 30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="p-0 mt-6">
+                <p className="text-lg font-bold ml-3">Set 2</p>
+                <div className='rounded-md w-full shadow-lg h-fit mt-1'>
+                    <div className='flex flex-row justify-between p-3'>
+                        <div>
+                            <p className='text-lg font-bold'>Reps</p>
+                           <input type="text" placeholder="12" value="12" className="w-[20px] border-2 text-center rounded-sm" /> <p className='text-lg inline'> / 12</p>
+                        </div>
+                        <div>
+                            <p className='text-lg font-bold'>Weight</p>
+                           <input type="text" placeholder="20kg" value="20" className="w-[24px] border-2 text-center rounded-sm" /> <p className='text-lg inline'>kg / 30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="p-0 mt-6">
+                <p className="text-lg font-bold ml-3">Set 3</p>
+                <div className='rounded-md w-full shadow-lg h-fit mt-1'>
+                    <div className='flex flex-row justify-between p-3'>
+                        <div>
+                            <p className='text-lg font-bold'>Reps</p>
+                           <input type="text" placeholder="12" value="12" className="w-[20px] border-2 text-center rounded-sm" /> <p className='text-lg inline'> / 12</p>
+                        </div>
+                        <div>
+                            <p className='text-lg font-bold'>Weight</p>
+                           <input type="text" placeholder="20kg" value="20" className="w-[24px] border-2 text-center rounded-sm" /> <p className='text-lg inline'>kg / 30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="modal-action">
+              <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-error btn-outline mr-3">Cancel</button>
+                <button className="btn btn-primary">Complete</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
             
         </PageLayout>
 
