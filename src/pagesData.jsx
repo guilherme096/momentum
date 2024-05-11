@@ -5,8 +5,8 @@ import Profile from "./pages/Profile/Profile"
 import ClassSchedule from "./pages/ClassSchedule/ClassSchedule"
 import PersonalTrainer from "./pages/PersonalTrainer/PersonalTrainer"
 import StartTrain from "./pages/TrainingSupport/StartTrain"
-import { classes } from "../public/info";
 import ClientScheduleHome from "./pages/ClassSchedule/ClientScheduleHome";
+import { classes } from "./info";
 
 const myclass = classes[0];
 

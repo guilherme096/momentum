@@ -1,5 +1,4 @@
 import PageLayout from '../../layouts/PageLayout';
-import HeatCalendar from '../../components/HeatCalendar';
 
 export default function PersonalTrainer() {
     return (

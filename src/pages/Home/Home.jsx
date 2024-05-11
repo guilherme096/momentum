@@ -1,9 +1,7 @@
 import QRCard from "../../components/QRCard";
 import PageLayout from "../../layouts/PageLayout";
 import CrowdGraph from "../../components/CrowdGraph";
-import { Link } from "react-router-dom";
-import HomeCard from "../../components/HomeCard";
-import HeatCalendar from "../../components/HeatCalendar";
+import HomeCard from '../../components/HomeCard';
 
 export default function Home() {
   return (
