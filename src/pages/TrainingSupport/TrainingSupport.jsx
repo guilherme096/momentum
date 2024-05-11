@@ -1,13 +1,14 @@
 import PageLayout from '../../layouts/PageLayout';
 import CardLayout from '../../layouts/CardLayout';
 import EndTrainingModal from '../../components/EndTrainingModal';
+import ExerciseCard from '../../components/ExerciseCard';
 
 export default function TrainingSupport() {
     return (
         <>
         <PageLayout pageName="Training Support">
             <h1 className="text-2xl font-bold mt-2">Next Exercise</h1>
-            <div className='rounded-lg  w-full h-48 shadow-md p-6 my-6 flex flex-row'>
+            <div className='rounded-lg w-full h-48 shadow-md p-6 my-6 flex flex-row bg-base-200'>
                 <div className='w-1/2 '>
                    <h3 className="text-2xl font-bold mb-3">Squat</h3> 
                    <div><p className="text-lg font-bold inline">Sets:</p><p className="text-lg inline ml-1">3</p></div>
@@ -33,32 +34,18 @@ export default function TrainingSupport() {
                 </div>
             </div>
             <h1 className="text-2xl font-bold mt-8">Upcoming Exercises</h1>
-            <div className='flex flex-row flex-wrap justify-between items-center mt-5 mx-6'>
-                <CardLayout>
-                    Squat
-                </CardLayout>
-
-                <CardLayout>
-                    Leg Press
-                </CardLayout>
-
-                <CardLayout>
-                    Chest Press
-                </CardLayout>
+            <div className='flex flex-row flex-wrap justify-between items-center mx-3 pt-3'>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
             </div>
             <h1 className="text-2xl font-bold mt-8">Exercises Done</h1>
-            <div className='flex flex-row flex-wrap justify-between items-center mt-5 mx-6'>
-                <CardLayout>
-                    Squat
-                </CardLayout>
-
-                <CardLayout>
-                    Leg Press
-                </CardLayout>
-
-                <CardLayout>
-                    Chest Press
-                </CardLayout>
+            <div className='flex flex-row flex-wrap justify-between items-center mx-3 pt-3'>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
+                <ExerciseCard name="Leg Press" sets="3" reps="12" weight="20kg"></ExerciseCard>
             </div>
             <EndTrainingModal></EndTrainingModal>
         <dialog id="exercise_modal" className="modal">
