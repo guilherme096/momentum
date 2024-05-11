@@ -17,13 +17,7 @@ export default {
     },
   },
   daisyui: {
-    themes: [
-      {
-        lemonade: {
-          ...require("daisyui/src/theming/themes")["nord"],
-        },
-      },
-    ],
+    themes: ["nord"],
   },
   plugins: [require("daisyui")],
 };
