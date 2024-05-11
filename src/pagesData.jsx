@@ -6,6 +6,7 @@ import ClassSchedule from "./pages/ClassSchedule/ClassSchedule"
 import PersonalTrainer from "./pages/PersonalTrainer/PersonalTrainer"
 import StartTrain from "./pages/TrainingSupport/StartTrain"
 import { classes } from "../public/info";
+import ClientScheduleHome from "./pages/ClassSchedule/ClientScheduleHome";
 
 const myclass = classes[0];
 
@@ -44,6 +45,11 @@ const pagesData = [
     path: "start-train",
     element: <StartTrain/>,
     title: "start-train",
+  },
+  {
+    path: "client-schedule-home",
+    element: <ClientScheduleHome/>,
+    title: "client-schedule-home"
   }
 
 
