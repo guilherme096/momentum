@@ -1,14 +1,35 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from "chart.js";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+} from "chart.js";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler,
+);
 
 const LineGraph = () => {
-  const sampleData = [25, 123, 199, 42, 23, 97, 73, 64, 40, 88, 130, 180, 165, 50, 23,20]
-  const currentTraffic = 43
-  const okayTraffic = 100
-  const dangerTraffic = 150
+  const sampleData = [
+    25, 123, 199, 42, 23, 97, 73, 64, 40, 88, 130, 180, 165, 50, 23, 20,
+  ];
+  const currentTraffic = 43;
+  const okayTraffic = 100;
+  const dangerTraffic = 150;
 
   const canvasData = {
     datasets: [
@@ -17,35 +38,34 @@ const LineGraph = () => {
         borderColor: "#485B75",
         pointRadius: 0,
         fill: true,
-        backgroundColor: 'rgba(173, 216, 230,1)',
+        backgroundColor: "rgba(173, 216, 230,1)",
         lineTension: 0.4,
         data: sampleData,
         borderWidth: 1,
-        yAxisID: 'y',
+        yAxisID: "y",
         order: 3,
       },
       {
-        label: 'okay',
-        borderColor: 'rgba(255,215,0, 0.5)', // 75% opaque
+        label: "okay",
+        borderColor: "rgba(255,215,0, 0.5)", // 75% opaque
         pointRadius: 0,
         lineTension: 0.4,
         data: new Array(sampleData.length).fill(okayTraffic),
         borderWidth: 1,
-        yAxisID: 'y', // Using the main y-axis
+        yAxisID: "y", // Using the main y-axis
         order: 1,
-        opacity: 0.2
+        opacity: 0.2,
       },
       {
-        label: 'bad',
-        borderColor: 'rgba(255,0,0, 0.2)', // 75% opaque
+        label: "bad",
+        borderColor: "rgba(255,0,0, 0.2)", // 75% opaque
         pointRadius: 0,
         lineTension: 0.4,
         data: new Array(sampleData.length).fill(dangerTraffic),
         borderWidth: 1,
-        yAxisID: 'y', // Using the main y-axis
+        yAxisID: "y", // Using the main y-axis
         order: 1,
-      }
-
+      },
     ],
   };
 
@@ -55,9 +75,9 @@ const LineGraph = () => {
         grid: {
           display: false,
         },
-        labels: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,19,20,21,22],
+        labels: [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
         ticks: {
-          color:'#485B75',
+          color: "#485B75",
           font: {
             family: "Nunito",
             size: 12,
@@ -75,7 +95,7 @@ const LineGraph = () => {
         max: 200,
         ticks: {
           stepSize: 10,
-          color: '#485B75',
+          color: "#485B75",
           font: {
             family: "Nunito",
             size: 12,
@@ -91,7 +111,6 @@ const LineGraph = () => {
       },
       title: {
         display: true,
-        text: 'Crowd Traffic',
         color: "#485B75",
         font: {
           family: "Nunito",
@@ -102,36 +121,18 @@ const LineGraph = () => {
     },
   };
 
-  const graphStyle = {
-    minHeight: "10rem",
-    maxWidth: "540px",
-    width: "100%",
-    border: "0px solid #C4C4C4",
-    borderRadius: "0.375rem",
-    padding: "0.5rem",
-  };
-
-  const trafficStyle = {
-    fontSize: "1.2rem",
-    color: "#485B75",
-    fontWeight: "bold",
-    marginRight: "0.5rem",
-    alignItems: "center",
-  };
-
-  const containerStyle = {
-    display: "",
-    alignItems: "center",
-    justifyContent: "space-between",
-  };
-
   return (
-    <div style={containerStyle} className="pt-4">
-      <div style={trafficStyle} >Current Traffic: {currentTraffic}</div>
-      <div style={graphStyle}>
-        <Line id="home" options={options} data={canvasData}></Line>
+    <>
+      <span className="text-2xl font-bold mb-2">
+        Current Traffic:{" "}
+        <span className="text-orange-600">{currentTraffic}</span>
+      </span>
+      <div className="p-3 rounded-lg shadow-lg h-52">
+        <div className="max-h-full w-full max-w-full h-full">
+          <Line id="home" options={options} data={canvasData}></Line>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
