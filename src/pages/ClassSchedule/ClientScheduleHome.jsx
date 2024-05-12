@@ -7,18 +7,30 @@ export default function ClientScheduleHome(){
 
     const classes = [
         {
-            name: "Yoga",
-            startTime: "10",
-            endTime: "11",
-            color: "green-200"
+            name: "High Intensity Training",
+            startTime: "10 AM",
+            endTime: "11 AM",
+            color: "[#ffd1ff]"
+        },
+
+        {
+            name: "Cycling",
+            startTime: "1 PM",
+            endTime: "3 PM",
+            color: "[#ffd1ff]"
         },
         {
-            name: "High Intensity Training",
-            startTime: "3",
-            endTime: "5",
-            color: "pink-300"
+            name: "Yoga",
+            startTime: "8 AM",
+            endTime: "9 AM",
+            color: "[#d1ffe6]"
         }
     ];
+
+    const day = {
+        month: "9",
+        week: "Mon"
+    }
 
 
     return(
@@ -41,7 +53,7 @@ export default function ClientScheduleHome(){
             </Link>
 
             
-            <DailyAgenda classes={classes} />
+            <DailyAgenda classes={classes} day={day} />
         
         </PageLayout>
     );
