@@ -1,15 +1,16 @@
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
-import TrainingSupport from "./pages/TrainingSupport/TrainingSupport"
-import Profile from "./pages/Profile/Profile"
-import ClassSchedule from "./pages/ClassSchedule/ClassSchedule"
-import PersonalTrainer from "./pages/PersonalTrainer/PersonalTrainer"
-import StartTrain from "./pages/TrainingSupport/StartTrain"
+import TrainingSupport from "./pages/TrainingSupport/TrainingSupport";
+import Profile from "./pages/Profile/Profile";
+import ClassSchedule from "./pages/ClassSchedule/ClassSchedule";
+import PersonalTrainer from "./pages/PersonalTrainer/PersonalTrainer";
+import StartTrain from "./pages/TrainingSupport/StartTrain";
 import ClientScheduleHome from "./pages/ClassSchedule/ClientScheduleHome";
 import { classes } from "./info";
 import HomePT from "./pages/Home/HomePT";
 import MyClientsPT from "./pages/MyClientsPT/MyClientsPT";
 import TrainingSchedulePT from "./pages/TrainingSchedulePT/TrainingSchedulePT";
+import TrainingSupportGeneral from "./pages/TrainingSupport/TrainingSupportGeneral";
 
 const myclass = classes[0];
 
@@ -31,12 +32,12 @@ const pagesData = [
   },
   {
     path: "profile",
-    element: <Profile/>,
+    element: <Profile />,
     title: "profile",
   },
   {
     path: "class-schedule",
-    element: <ClassSchedule class_obj={myclass}/>,
+    element: <ClassSchedule class_obj={myclass} />,
     title: "class-schedule",
   },
   {
@@ -46,34 +47,39 @@ const pagesData = [
   },
   {
     path: "start-train",
-    element: <StartTrain/>,
+    element: <StartTrain />,
     title: "start-train",
   },
   {
     path: "client-schedule-home",
-    element: <ClientScheduleHome/>,
-    title: "client-schedule-home"
+    element: <ClientScheduleHome />,
+    title: "client-schedule-home",
   },
   {
     path: "home-pt",
-    element: <HomePT/>,
-    title: "home-pt"
+    element: <HomePT />,
+    title: "home-pt",
   },
   {
     path: "my-clients",
-    element: <MyClientsPT/>,
-    title: "my-clients"
+    element: <MyClientsPT />,
+    title: "my-clients",
   },
   {
     path: "my-clients",
-    element: <MyClientsPT/>,
-    title: "my-clients"
+    element: <MyClientsPT />,
+    title: "my-clients",
   },
   {
     path: "training-schedule-pt",
-    element: <TrainingSchedulePT/>,
-    title: "training-schedule-pt"
-  }
+    element: <TrainingSchedulePT />,
+    title: "training-schedule-pt",
+  },
+  {
+    path: "general-training",
+    element: <TrainingSupportGeneral />,
+    title: "general-training",
+  },
 ];
 
 export default pagesData;
