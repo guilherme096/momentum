@@ -27,7 +27,7 @@ export default function ClassSchedule({class_obj}) {
             </div>
             <ConfirmationModal></ConfirmationModal>
         </PageLayout>
-        <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3 bg-white">
+        <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3">
         <div className="stats lg:stats-horizontal shadow-md min-w-full items-center overflow-clip">
 
             <div className="stat text-center justify-center">
@@ -46,7 +46,6 @@ export default function ClassSchedule({class_obj}) {
 
             <div className="stat flex justify-center items-center h-full">
                 <button className="btn bg-primary text-white font-bold rounded w-16 h-16 justify-center items-center" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
-                
             </div>    
         </div>
 
