@@ -26,31 +26,26 @@ export default function ClassSchedule({class_obj}) {
                 </div>
             </div>
             <ConfirmationModal></ConfirmationModal>
-        </PageLayout>
-        <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3">
-        <div className="stats lg:stats-horizontal shadow-md min-w-full items-center overflow-clip">
 
-            <div className="stat text-center justify-center">
-                <div className="stat-title mb-6 text-xs">Timestamp</div>
-                <div className="stat-value text-sm items-center text-center">{class_obj.date}</div>
-                <div className="stat-value text-sm items-center text-center mb-2">{class_obj.time}</div>
-            </div>
-            
-            <div className="stat flex flex-col text-center justify-center">
-                <div className="stat-title items-center text-xs justify-center">Lotation</div>
-                <div>
-                    <div className="stat-value radial-progress text-sm mt-2 items-center justify-center" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
+            <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3">
+                <div className="stats lg:stats-horizontal shadow-md min-w-full items-center overflow-clip">
+                    <div className="stat text-center justify-center">
+                        <div className="stat-title mb-6 text-xs">Timestamp</div>
+                        <div className="stat-value text-sm items-center text-center">{class_obj.date}</div>
+                        <div className="stat-value text-sm items-center text-center mb-2">{class_obj.time}</div>
                     </div>
-            </div>  
-
-
-            <div className="stat flex justify-center items-center h-full">
-                <button className="btn bg-primary text-white font-bold rounded w-16 h-16 justify-center items-center" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
-            </div>    
-        </div>
-
-        
-    </div>
+                    <div className="stat flex flex-col text-center justify-center">
+                        <div className="stat-title items-center text-xs justify-center">Lotation</div>
+                        <div>
+                            <div className="stat-value radial-progress text-sm mt-2 items-center justify-center" style={{ "--value": 100 * n, "--size": "4rem", "--thickness": "4px" }} role="progressbar">{class_obj.ocupation}</div>
+                            </div>
+                    </div>  
+                    <div className="stat flex justify-center items-center h-full">
+                        <button className="btn bg-primary text-white font-bold rounded w-16 h-16 justify-center items-center" onClick={()=>document.getElementById('my_modal_2').showModal()}>Add</button>
+                    </div>    
+                </div>
+            </div>
+        </PageLayout>
     </>
     );
 }
