@@ -10,20 +10,20 @@ export default function ClientScheduleHome(){
             name: "High Intensity Training",
             startTime: "10 AM",
             endTime: "11 AM",
-            color: "[#ffd1ff]"
+            color: "#ffd1ff"
         },
 
         {
             name: "Cycling",
             startTime: "1 PM",
             endTime: "3 PM",
-            color: "[#ffd1ff]"
+            color: "#ffd1ff"
         },
         {
             name: "Yoga",
             startTime: "8 AM",
             endTime: "9 AM",
-            color: "[#d1ffe6]"
+            color: "#d1ffe6"
         }
     ];
 

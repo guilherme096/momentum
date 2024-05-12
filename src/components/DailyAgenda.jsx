@@ -38,11 +38,11 @@ export default function DailyAgenda({ classes, day }) {
                     const endRow = timeToGridRow(aula.endTime);
                     const rowSpan = endRow - startRow + 1; // Ensure inclusive span
                     return (
-                        <div key={index} style={{ gridColumnStart: 2, gridRowStart: startRow, gridRowEnd: startRow + rowSpan}}
-                            className={`bg-${aula.color} border border-[#f2d3d8] rounded-lg p-2 m-2 flex items-center justify-start overflow-hidden`}>
+                       <div key={index} style={{ gridColumnStart: 2, gridRowStart: startRow, gridRowEnd: startRow + rowSpan, backgroundColor: aula.color }}
+                            className={`border border-[#f2d3d8] rounded-lg p-2 m-2 flex items-center justify-start overflow-hidden`}>
                             <p className="font-semibold flex-auto min-w-0">{aula.name}</p>
                             <p className="shrink-0 pl-2 text-sm text-gray-600 whitespace-nowrap">{aula.startTime} - {aula.endTime}</p>
-                        </div>
+                        </div> 
                     );
                 })}
             </div>
