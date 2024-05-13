@@ -1,25 +1,24 @@
-import Calendar from 'react-calendar';
-import PageLayout from '../../layouts/PageLayout';
-import PtCalendar from '../../components/PtCalendar';
+import Calendar from "react-calendar";
+import PageLayout from "../../layouts/PageLayout";
+import PtCalendar from "../../components/PtCalendar";
+import LogCalendar from "../../components/LogCalendar";
 
 export default function PersonalTrainer() {
-    return (
-        <PageLayout pageName="Personal Trainer">
-            <div className='flex justify-between items-center ml-9 mr-9 mb-9'>
-                <div className='flex justify-between items-center'>
-
-                    <div className="avatar">
-                        <div className="w-24 rounded-full">
-                            <img src="https://scontent.fopo2-2.fna.fbcdn.net/v/t39.30808-6/300763703_421143786665040_2928983804635098984_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGFXd43cbMLWtyarPZXKI9ELmGdFsKnwO8uYZ0WwqfA74Z-_27vZ35OVTPdoHbYlr6lpb1x2ohmLlo7UDIan3op&_nc_ohc=MXJYpTMf4dQQ7kNvgFcigZk&_nc_ht=scontent.fopo2-2.fna&oh=00_AYBPqJ299bnAWEovc0AJaPEX3vae7RFSAnfCi27Uc-cwuA&oe=6648656D" />
-                        </div>
-                    </div>
-
-                </div>
-                <div className="flex flex-col items-start justify-center">
-                    <h1 className="text-2xl font-bold mt-2 ">Kevin Monteiro</h1>
-                    <h3 className='stat-title text-xl mb-1'>Personal Trainer</h3>
-                </div>
+  return (
+    <PageLayout pageName="Personal Trainer">
+      <div className="flex justify-between items-center ml-9 mr-9 mb-9">
+        <div className="flex justify-between items-center">
+          <div className="avatar">
+            <div className="w-24 rounded-full">
+              <img src="https://scontent.fopo2-2.fna.fbcdn.net/v/t39.30808-6/300763703_421143786665040_2928983804635098984_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGFXd43cbMLWtyarPZXKI9ELmGdFsKnwO8uYZ0WwqfA74Z-_27vZ35OVTPdoHbYlr6lpb1x2ohmLlo7UDIan3op&_nc_ohc=MXJYpTMf4dQQ7kNvgFcigZk&_nc_ht=scontent.fopo2-2.fna&oh=00_AYBPqJ299bnAWEovc0AJaPEX3vae7RFSAnfCi27Uc-cwuA&oe=6648656D" />
             </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-start justify-center">
+          <h1 className="text-2xl font-bold mt-2 ">Kevin Monteiro</h1>
+          <h3 className="stat-title text-xl mb-1">Personal Trainer</h3>
+        </div>
+      </div>
 
       <h1 className="text-2xl font-bold">Next Class</h1>
 
@@ -33,12 +32,16 @@ export default function PersonalTrainer() {
 
           <div className="border border-gray-500 py-5 mr-5 ml-5"></div>
 
-               <div className="text-4xl font-bold">18h00</div>
-
-            </div>
-                <div className="text-lg mt-3">plan: leg day</div>
-            </div>
-
-        </PageLayout>
-    );
+          <div className="text-4xl font-bold">18h00</div>
+        </div>
+        <span className="text-lg mt-3">
+          Plan: <span className="font-semibold">Leg Day</span>
+        </span>
+      </div>
+      <h1 className="mt-3 text-2xl font-bold">Calendar</h1>
+      <div className="my-3">
+        <LogCalendar />
+      </div>
+    </PageLayout>
+  );
 }
