@@ -22,10 +22,10 @@ export default function ConfirmationModal() {
                   console.log(scheduled_classes);
                   var new_class = {
                     name: "CrossFit",
-                    teacher: "John Doe",
-                    date: "2021-09-30",
-                    startTime: "6 PM",
-                    endTime: "7 PM",
+                    teacher: "Kevin G.",
+                    date: "2024-05-09",
+                    startTime: "10 AM",
+                    endTime: "11 AM",
                   };
                   if (scheduled_classes === null) {
                     scheduled_classes = [];
