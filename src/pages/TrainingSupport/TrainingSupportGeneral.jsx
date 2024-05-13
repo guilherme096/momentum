@@ -18,7 +18,7 @@ export default function TrainingSupportGeneral() {
         <div className="rounded-lg shadow-lg p-4 bg-base-200">
           <h1 className="text-2xl font-bold">New Session</h1>
           <div className="flex flex-col w-full h-fit justify-center items-center mt-4">
-            <button className="h-20 w-full rounded-md bg-primary font-bold flex flex-col justify-center items-center text-white">
+            <button className="h-16 w-full rounded-md bg-primary font-bold flex flex-col justify-center items-center text-white">
               <Link
                 className="w-full h-full text-center flex flex-col justify-center items-center"
                 to="/start-train"
@@ -28,8 +28,7 @@ export default function TrainingSupportGeneral() {
             </button>
           </div>
         </div>
-        <div className="divider"></div>
-        <h1 className="text-2xl font-bold">Training Logs</h1>
+        <h1 className="text-2xl font-bold mt-5">Training Logs</h1>
         <div className="flex flex-col w-full h-fit justify-center items-center mt-3">
           <LogCalendar />
         </div>
