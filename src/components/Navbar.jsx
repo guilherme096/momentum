@@ -5,7 +5,7 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <div className="btm-nav">
-      <CustomLink to="/home" className="site-title">
+      <CustomLink to="/home" className="site-title ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-8 w-8"
@@ -57,12 +57,13 @@ function CustomLink({ to, children, ...props }) {
   const scale = isActive ? { scale: 1.12 } : { scale: 1, opacity: 0.7 };
 
   return (
-    <li className={isActive ? "active" : ""}>
-      <Link to={to} {...props}>
+    <li className={isActive ? "active" : ""} style={{ width: '100%' }}>
+      <Link to={to} {...props} className="flex justify-center items-center size-full">
         <motion.div animate={scale} transition={{ duration: 0.3 }}>
           {children}
         </motion.div>
       </Link>
     </li>
+
   );
 }

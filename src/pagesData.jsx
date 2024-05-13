@@ -11,6 +11,7 @@ import HomePT from "./pages/Home/HomePT";
 import MyClientsPT from "./pages/MyClientsPT/MyClientsPT";
 import TrainingSchedulePT from "./pages/TrainingSchedulePT/TrainingSchedulePT";
 import TrainingSupportGeneral from "./pages/TrainingSupport/TrainingSupportGeneral";
+import Settings from "./pages/Settings";
 
 const myclass = classes[0];
 
@@ -79,6 +80,11 @@ const pagesData = [
     path: "general-training",
     element: <TrainingSupportGeneral />,
     title: "general-training",
+  },
+  {
+    path: "settings",
+    element: <Settings></Settings>,
+    title: "settings",
   },
 ];
 
