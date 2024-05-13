@@ -6,8 +6,8 @@ export default function PageLayout({ children, pageName, style }) {
   return (
     <div className={styling}>
       <Header pageName={pageName} />
-      <div className="p-3 rounded-lg h-screen w-full overflow-x-visible max-w-full pb-6">
-        <main>{children}</main>
+      <div className="p-3 rounded-lg h-screen w-full overflow-x-visible max-w-full">
+        <main className="pb-20">{children}</main>
       </div>
       <NavbarPT />
     </div>
