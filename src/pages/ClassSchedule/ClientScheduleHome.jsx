@@ -7,7 +7,7 @@ export default function ClientScheduleHome(){
 
     const classes = [
         {
-            name: "High Intensity Training",
+            name: "CossFit",
             startTime: "10 AM",
             endTime: "11 AM",
             color: "#ffd1ff",
