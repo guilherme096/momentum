@@ -23,6 +23,7 @@ const exercises = [
 export default function TrainingSupport() {
   const [currentExercise, setCurrentExercise] = useState(exercises[0]);
   const [sets, setSets] = useState([]);
+  const [doneExercises, setDoneExercises] = useState([]);
   const [showCamera, setShowCamera] = useState(false);
 
   useEffect(() => {
@@ -135,17 +136,21 @@ export default function TrainingSupport() {
             name="Leg Press"
             sets="3"
             reps="12"
-            weight="20kg"
+            weight="150kg"
           ></ExerciseCard>
         </div>
         <h1 className="text-2xl font-bold mt-7">Exercises Done</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
-          <ExerciseCard
-            name="Leg Press"
-            sets="3"
-            reps="12"
-            weight="20kg"
-          ></ExerciseCard>
+          {doneExercises &&
+            doneExercises.map((exercise, index) => (
+              <ExerciseCard
+                key={index}
+                name={exercise.name}
+                sets={exercise.sets}
+                reps={exercise.reps}
+                weight={exercise.weight}
+              ></ExerciseCard>
+            ))}
         </div>
         <EndTrainingModal></EndTrainingModal>
         <dialog id="exercise_modal" className="modal">
@@ -196,6 +201,7 @@ export default function TrainingSupport() {
                   className="btn btn-primary"
                   onClick={() => {
                     setCurrentExercise(exercises[1]);
+                    setDoneExercises([...doneExercises, currentExercise]);
                   }}
                 >
                   Complete
@@ -206,5 +212,5 @@ export default function TrainingSupport() {
         </dialog>
       </PageLayout>
     </>
-  );
+    );
 }

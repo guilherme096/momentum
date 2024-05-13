@@ -9,7 +9,7 @@ export default function MyClientsPT() {
   const people = [
     {
       id: 1,
-      name: "Sara Faria",
+      name: "Sara Matos",
       age: "25 years",
       weight: "65kg",
       height: "165cm",
