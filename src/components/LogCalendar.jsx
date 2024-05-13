@@ -1,5 +1,5 @@
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import "./CalendarStyles.css";
 import { exercise_logs, exercises } from "../info";
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
