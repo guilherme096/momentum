@@ -1,15 +1,15 @@
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 
-export default function PageLayout({children, pageName, style}) {
-    const styling = `w-screen ${style}`;
-    return (
-        <div className={styling}>
-            <Header pageName={pageName} />
-            <div className="p-4 rounded-lg h-screen w-full overflow-x-visible max-w-full">
-                <main className="pb-8">{children}</main>
-            </div>
-            <Navbar />
-        </div>
-    )
+export default function PageLayout({ children, pageName, style }) {
+  const styling = `w-screen ${style}`;
+  return (
+    <div className={styling}>
+      <Header pageName={pageName} />
+      <div className="p-4 rounded-lg h-screen w-full overflow-x-visible max-w-full">
+        <main className="pb-6">{children}</main>
+      </div>
+      <Navbar />
+    </div>
+  );
 }

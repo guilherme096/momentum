@@ -37,7 +37,7 @@ export default function TrainingSupport() {
     <>
       {showCamera && <Camera />}
       <PageLayout pageName="Training Support">
-        <h1 className="text-2xl font-bold mt-2">Next Exercise</h1>
+        <h1 className="text-2xl font-bold">Next Exercise</h1>
         <div className="rounded-lg w-full h-48 shadow-md p-6 my-6 flex flex-row bg-base-200">
           <div className="w-1/2 ">
             <h3 className="text-2xl font-bold mb-3">{currentExercise.name}</h3>
@@ -78,7 +78,7 @@ export default function TrainingSupport() {
             {" "}
             End Training Session
           </button>
-        </div>
+      </div>
         <h1 className="text-2xl font-bold mt-5">Help</h1>
         <div>
           <button
@@ -130,7 +130,7 @@ export default function TrainingSupport() {
             </button>
           </div>
         </div>
-        <h1 className="text-2xl font-bold mt-8">Upcoming Exercises</h1>
+        <h1 className="text-2xl font-bold mt-10">Upcoming Exercises</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
           <ExerciseCard
             name="Leg Press"
@@ -139,7 +139,7 @@ export default function TrainingSupport() {
             weight="150kg"
           ></ExerciseCard>
         </div>
-        <h1 className="text-2xl font-bold mt-8">Exercises Done</h1>
+        <h1 className="text-2xl font-bold mt-7">Exercises Done</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
           {doneExercises &&
             doneExercises.map((exercise, index) => (
@@ -212,5 +212,5 @@ export default function TrainingSupport() {
         </dialog>
       </PageLayout>
     </>
-  );
+    );
 }
