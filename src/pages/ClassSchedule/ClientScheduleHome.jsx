@@ -62,14 +62,8 @@ export default function ClientScheduleHome(){
             </div>
             <div>
                 <h1 className="text-xl font-bold mt-8"> All bookings</h1>
-
             </div>
 
-            <Link to="/class-schedule">
-                <button className='btn bg-primary'>class schedule</button>
-            </Link>
-
-            
             <DailyAgenda link={"/class-schedule"} classes={classes} day={day} />
         
         </PageLayout>

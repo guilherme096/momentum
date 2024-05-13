@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { Fragment, useState, useEffect, useRef } from "react";
 import PageLayoutPT from '../../layouts/PageLayoutPT';
 import CardLayout from '../../layouts/CardLayout';
 import { Link } from 'react-router-dom';
@@ -7,21 +7,24 @@ import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import dayjs from 'dayjs';
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+
 
 const people = [
-    { id: 0, name: 'None' },
-    { id: 1, name: 'Diogo Costa' },
-    { id: 2, name: 'Ana Pires' },
-    { id: 3, name: 'Sara Matos' },
-    { id: 4, name: 'Joao Mário' },
+  { id: 0, name: "None" },
+  { id: 1, name: "Diogo Costa" },
+  { id: 2, name: "Ana Pires" },
+  { id: 3, name: "Sara Matos" },
+  { id: 4, name: "Joao Mário" },
 ];
 
 const train = [
-    { id: 0, name: 'None' },
-    { id: 1, name: 'Full Body' },
-    { id: 2, name: 'Upper Body' },
-    { id: 3, name: 'Lower Body' },
-    { id: 8, name: 'Calisthenics' }
+  { id: 0, name: "None" },
+  { id: 1, name: "Full Body" },
+  { id: 2, name: "Upper Body" },
+  { id: 3, name: "Lower Body" },
+  { id: 8, name: "Calisthenics" },
 ];
 
 export default function TrainingSchedulePT() {
@@ -31,6 +34,17 @@ export default function TrainingSchedulePT() {
     const [startTime, setStartTime] = useState();
     const [endTime, setEndTime] = useState();
     const [dateValue, setDateValue] = useState(dayjs()); 
+
+    const [isOpenPerson, setIsOpenPerson] = useState(false);
+    const [isOpenPlan, setIsOpenPlan] = useState(false);
+  
+    const togglePersonDropdown = (isOpen) => {
+      setIsOpenPerson(isOpen);
+    };
+  
+    const togglePlanDropdown = (isOpen) => {
+      setIsOpenPlan(isOpen);
+    };
 
 
     return (
@@ -47,6 +61,8 @@ export default function TrainingSchedulePT() {
                                     items={people}
                                     label=""
                                     onChange={setSelectedPerson}
+                                    onToggle={togglePersonDropdown}
+                                    dropdownStyle={{ zIndex: isOpenPerson ? 100 : 1 }}
                                 />
                             </div>
                         </div>
@@ -57,6 +73,8 @@ export default function TrainingSchedulePT() {
                                     items={train}
                                     label=""
                                     onChange={setSelectedPlan}
+                                    onToggle={togglePlanDropdown}
+                                    style={{ zIndex: isOpenPlan ? 2 : 1 }}
                                 />
                             </div>
                         </div>
@@ -81,6 +99,13 @@ export default function TrainingSchedulePT() {
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
+                    </div>
+                </div>
+
+                <div className="mt-7">
+                    <h1 className="text-xl font-bold">Date</h1>
+                    <div className="my-4">
+                        <Calendar />
                     </div>
                 </div>
 

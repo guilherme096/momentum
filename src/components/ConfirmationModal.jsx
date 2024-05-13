@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
-
+import {Link} from "react-router-dom";
 
 export default function ConfirmationModal() {
     return(
@@ -13,7 +13,9 @@ export default function ConfirmationModal() {
                         <button className="btn btn-md btn-error btn-outline text-white">Cancel</button>
                     </form>
                     <form className="modal-action">
-                        <button className="btn bg-primary btn-md text-white ml-3">Confirm</button>
+                        <Link to="/client-schedule-home">
+                            <button className="btn bg-primary btn-md text-white ml-3">Confirm</button>
+                        </Link>
                     </form>
                 </div>
             </div>
