@@ -1,5 +1,4 @@
 import PageLayout from "../layouts/PageLayout";
-import {Link} from "react-router-dom";
 import BackButton from "../components/BackButton";
 
 export default function Settings(){
