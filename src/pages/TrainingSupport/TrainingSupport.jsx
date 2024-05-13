@@ -36,7 +36,7 @@ export default function TrainingSupport() {
     <>
       {showCamera && <Camera />}
       <PageLayout pageName="Training Support">
-        <h1 className="text-2xl font-bold mt-2">Next Exercise</h1>
+        <h1 className="text-2xl font-bold mt-0">Next Exercise</h1>
         <div className="rounded-lg w-full h-48 shadow-md p-6 my-6 flex flex-row bg-base-200">
           <div className="w-1/2 ">
             <h3 className="text-2xl font-bold mb-3">{currentExercise.name}</h3>
@@ -67,7 +67,7 @@ export default function TrainingSupport() {
             </button>
           </div>
         </div>
-        <h1 className="text-2xl font-bold mt-2">Help</h1>
+        <h1 className="text-2xl font-bold mt-3">Help</h1>
         <div>
           <button
             className="btn btn-outline font-boldrounded mt-2 w-full"
@@ -76,7 +76,7 @@ export default function TrainingSupport() {
             Scan Machine QR
           </button>
         </div>
-        <h1 className="text-xl font-bold mt-2">Timer</h1>
+        <h1 className="text-2xl font-bold mt-7">Timer</h1>
         <div className="flex flex-col items-center justify-between">
           <h1 className="text-6xl font-bold"> 00:00</h1>
           <div className="flex flex-row justify-between mt-2 max-w-[165px] w-full">
@@ -118,7 +118,7 @@ export default function TrainingSupport() {
             </button>
           </div>
         </div>
-        <h1 className="text-2xl font-bold mt-8">Upcoming Exercises</h1>
+        <h1 className="text-2xl font-bold mt-10">Upcoming Exercises</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
           <ExerciseCard
             name="Leg Press"
@@ -127,7 +127,7 @@ export default function TrainingSupport() {
             weight="20kg"
           ></ExerciseCard>
         </div>
-        <h1 className="text-2xl font-bold mt-8">Exercises Done</h1>
+        <h1 className="text-2xl font-bold mt-7">Exercises Done</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
           <ExerciseCard
             name="Leg Press"
