@@ -34,8 +34,8 @@ export default function Profile() {
                     <div className="radial-progress" style={{"--value":70, "--thickness": "6px", "--size": "5rem" }} role="progressbar">4/12</div>
 
                     <div className="flex flex-col items-start justify-between">
-                        <h1 className='text-xl'>Goal: 12 p/month</h1>
-                        <h1 className='text-xl mb-1'>Current: 4 this month</h1>
+                        <h1 className='text-lg'>Goal: 12 p/month</h1>
+                        <h1 className='text-lg mb-1'>Current: 4 this month</h1>
                         <h1 className='text-sm mb-1 stat-title'>Progress: 44%</h1>
                     </div>
 
