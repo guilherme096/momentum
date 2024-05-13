@@ -1,6 +1,6 @@
 import PageLayout from '../../layouts/PageLayout';
-import CardLayout from '../../layouts/CardLayout';
 import LogCalendar from '../../components/LogCalendar';
+import BioCard from '../../components/BioCard';
 
 export default function Profile() {
     return (
@@ -45,25 +45,15 @@ export default function Profile() {
                 <LogCalendar/>
             </div>
             <h1 className="text-2xl font-bold mt-8"> Bio Metrics</h1>
-                <div className='flex flex-row flex-wrap justify-around items-center mt-5'>  
-                <CardLayout>
-        +
-                </CardLayout>
+            <div className='flex flex-row flex-wrap justify-around items-center mt-5 my-20'>  
+                <BioCard name={"+"} />
+                <BioCard name={"Peso"} />
 
-                <CardLayout>
-                    Peso
-                </CardLayout>
+                <BioCard name="IMC"/>
 
-                <CardLayout>
-                    IMC
-                </CardLayout>
+                <BioCard name="Gordura"/>
 
-                <CardLayout>
-                    Gordura
-                </CardLayout>
-  
-                </div>
-
+            </div>
 
         </PageLayout>
     );
