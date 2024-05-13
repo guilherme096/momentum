@@ -123,11 +123,12 @@ const LineGraph = () => {
 
   return (
     <>
-      <span className="text-2xl font-bold mb-2">
-        Current Traffic:{" "}
-        <span className="text-orange-600">{currentTraffic}</span>
-      </span>
-      <div className="p-3 rounded-lg shadow-lg h-52">
+
+      <div className="p-5 rounded-lg shadow-lg h-61">
+        <span className="text-xl font-bold">
+          Current Traffic:{" "}
+          <span className="text-orange-600">{currentTraffic}</span>
+        </span>
         <div className="max-h-full w-full max-w-full h-full">
           <Line id="home" options={options} data={canvasData}></Line>
         </div>

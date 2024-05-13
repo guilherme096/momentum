@@ -11,7 +11,7 @@ export default function Home() {
           <QRCard />
         </div>
       </div>
-      <div className="bg-transparent px-2 mt-6 w-full h-36 flex justify-around items-center">
+      <div className="bg-transparent px-1 mt-6 w-full h-36 flex justify-around items-center">
         <HomeCard
           title="Class Schedule"
           link="/client-schedule-home"
@@ -31,7 +31,9 @@ export default function Home() {
           link="/start-train"
         />
       </div>
-      <CrowdGraph></CrowdGraph>
+      <div className="px-2 -mt-4">
+        <CrowdGraph></CrowdGraph>
+      </div>
     </PageLayout>
   );
 }
