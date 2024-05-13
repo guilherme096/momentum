@@ -17,7 +17,7 @@ export default function ConfirmationModal() {
                         <button className="btn btn-md btn-error btn-outline text-white">Cancel</button>
                     </form>
                     <form className="modal-action">
-                        <Link to="/start-train">
+                        <Link to="/general-training">
                             <button className="btn bg-primary btn-md text-white ml-3">Confirm</button>
                         </Link>
                     </form>

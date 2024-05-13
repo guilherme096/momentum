@@ -2,13 +2,13 @@ import React, { Fragment, useState, useRef, useEffect } from 'react';
 import { Combobox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 
-function TrainingCombobox({ items, label, onChange, dropdownStyle}) {
+function TrainingCombobox({ items, label, onChange, dropdownStyle }) {
     const [selectedItem, setSelectedItem] = useState(items[0]);
     const [isOpen, setIsOpen] = useState(false);
     const comboboxRef = useRef(null);
+
     const toggleDropdown = () => {
         setIsOpen(!isOpen);
-        onToggle(!isOpen); 
     };
 
     useEffect(() => {
@@ -29,13 +29,19 @@ function TrainingCombobox({ items, label, onChange, dropdownStyle}) {
             <label>{label}</label>
             <Combobox value={selectedItem} onChange={(item) => {
                 setSelectedItem(item);
+                setIsOpen(false); // Close the dropdown when an option is selected
+                if (onChange) {
+                    onChange(item); // Call the onChange prop if provided
+                }
             }}>
                 <div className="relative mt-1">
-                    <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
-                        onClick={() => setIsOpen(!isOpen)}>
+                    <div
+                        className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm"
+                        onClick={toggleDropdown}
+                    >
                         <span className="block w-full py-2 pl-3 pr-10 text-sm leading-5 text-gray-900">{selectedItem.name}</span>
                         <Combobox.Button className="absolute inset-y-0 right-0 flex items-center pr-2">
-                            <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true"/>
+                            <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                         </Combobox.Button>
                     </div>
                     <Transition
