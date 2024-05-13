@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Aula from './Aula'
 
 export default function DailyAgenda({ classes, day }) {
     // Helper to calculate grid row based on time

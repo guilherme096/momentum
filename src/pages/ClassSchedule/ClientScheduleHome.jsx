@@ -10,7 +10,7 @@ export default function ClientScheduleHome(){
             name: "High Intensity Training",
             startTime: "10 AM",
             endTime: "11 AM",
-            color: "#ffd1ff"
+            color: "#ffd1ff",
         },
 
         {
@@ -53,7 +53,7 @@ export default function ClientScheduleHome(){
             </Link>
 
             
-            <DailyAgenda classes={classes} day={day} />
+            <DailyAgenda link={"/class-schedule"} classes={classes} day={day} />
         
         </PageLayout>
     );
