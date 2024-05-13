@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Aula from "./Aula";
 
-export default function DailyAgenda({ classes, day, link }) {
+export default function DailyAgenda({
+  classes,
+  day,
+  link,
+  addBookingCallback,
+}) {
   // Helper to calculate grid row based on time
   const timeToGridRow = (time) => {
     const [hour, modifier] = time.split(" ");
@@ -22,7 +27,7 @@ export default function DailyAgenda({ classes, day, link }) {
   };
 
   return (
-    <div className="mt-8 bg-white rounded-lg p-2">
+    <div className="mt-3 bg-white rounded-lg p-2">
       {/* Day and month display */}
       <div className="flex justify-center items-center h-12 px-4 space-x-4">
         <p className="text-3xl font-bold">{day.month}</p>
@@ -68,6 +73,7 @@ export default function DailyAgenda({ classes, day, link }) {
               bgColor={aula.color}
               aula={aula}
               link={link}
+              schedule={addBookingCallback}
             />
           );
         })}
