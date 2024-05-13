@@ -5,7 +5,7 @@ export default function BioCard({name, stats}) {
         <CardLayout>
             <h3 className="text-xl font-medium mb-1">{name}</h3> 
             <div className='w-full flex flex-row justify-between'>
-                <div><p className=" text-sm inline ml-1">stats
+                <div><p className=" text-sm inline ml-1">
                 </p></div>
             </div>
         </CardLayout>
