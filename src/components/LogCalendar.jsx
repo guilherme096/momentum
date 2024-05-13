@@ -2,7 +2,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { exercise_logs, exercises } from "../info";
 import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
+import { Dialog } from "@headlessui/react";
 import ExerciseCard from "./ExerciseCard";
 
 export default function LogCalendar() {
@@ -41,7 +41,7 @@ export default function LogCalendar() {
         <div className="fixed inset-0 bg-black/30" aria-hidden="true" />
 
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="w-full max-w-lg max-h-[80%] overflow-y-scroll border bg-white p-8 rounded-lg">
+          <Dialog.Panel className="w-full max-w-lg max-h-[80%] overflow-y-scroll border bg-white p-8 rounded-lg">
             <h2 className="text-2xl font-bold">Workout Log</h2>
             <div className="mt-6">
               <h2 className="text-xl font-bold inline">Date: </h2>
@@ -70,7 +70,7 @@ export default function LogCalendar() {
                 />
               );
             })}
-          </DialogPanel>
+          </Dialog.Panel>
         </div>
       </Dialog>
       <Calendar tileClassName={tileClassName} onClickDay={onLogClick} />
