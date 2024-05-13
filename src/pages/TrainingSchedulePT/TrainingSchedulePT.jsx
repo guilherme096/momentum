@@ -1,8 +1,12 @@
+import React, { useState } from 'react';
 import PageLayoutPT from '../../layouts/PageLayoutPT';
 import CardLayout from '../../layouts/CardLayout';
 import { Link } from 'react-router-dom';
-import { Fragment, useState, useEffect, useRef } from 'react';
 import TrainingCombobox from '../../components/Combobox';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import dayjs from 'dayjs';
 
 const people = [
     { id: 0, name: 'None' },
@@ -23,72 +27,77 @@ const train = [
 export default function TrainingSchedulePT() {
     const [selectedPerson, setSelectedPerson] = useState(people[0]);
     const [selectedPlan, setSelectedPlan] = useState(train[0]);
-    const [isOpenPerson, setIsOpenPerson] = useState(false);
-    const [isOpenPlan, setIsOpenPlan] = useState(false);
+    const [startDate, setStartDate] = useState(new Date());
+    const [startTime, setStartTime] = useState();
+    const [endTime, setEndTime] = useState();
+    const [dateValue, setDateValue] = useState(dayjs()); 
 
-    const togglePersonDropdown = (isOpen) => {
-        setIsOpenPerson(isOpen);
-    };
-
-    const togglePlanDropdown = (isOpen) => {
-        setIsOpenPlan(isOpen);
-    };
 
     return (
         <>
-        <PageLayoutPT pageName="Training Schedule">
-            <h1 className='text-xl font-bold mb-2'>Specifications</h1>
-            <div className='card shadow-sm'>
-                <div className='m-5'>
-                    <div className='flex justify-between items-center'>
-                        <h1 className='text-xl'>Client</h1>
-                        <div className='w-40'>
-                            <TrainingCombobox
-                                items={people}
-                                label=""
-                                onChange={setSelectedPerson}
-                                onToggle={togglePersonDropdown}
-                                dropdownStyle={{ zIndex: isOpenPerson ? 100 : 1 }}
-                            />
+            <PageLayoutPT pageName="Training Schedule">
+                <h1 className='text-xl font-bold'>Specifications</h1>
+
+                <div className='card shadow-sm'>
+                    <div className='m-5'>
+                        <div className='flex justify-between items-center'>
+                            <h1 className='text-xl'>Client</h1>
+                            <div className='w-40'>
+                                <TrainingCombobox
+                                    items={people}
+                                    label=""
+                                    onChange={setSelectedPerson}
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className='flex justify-between items-center mt-3'>
-                        <h1 className='text-xl'>Plan</h1>
-                        <div className='w-40'>
-                            <TrainingCombobox
-                                items={train}
-                                label=""
-                                onChange={setSelectedPlan}
-                                onToggle={togglePlanDropdown}
-                                style={{ zIndex: isOpenPlan ? 2 : 1 }}
-                            />
+                        <div className='flex justify-between items-center mt-3'>
+                            <h1 className='text-xl'>Plan</h1>
+                            <div className='w-40'>
+                                <TrainingCombobox
+                                    items={train}
+                                    label=""
+                                    onChange={setSelectedPlan}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div className='mt-7'>
-                <h1 className='text-xl font-bold'>Date</h1>
-                [calendário]
-            </div>
-
-            <div className='mt-7'>
-                <h1 className='text-xl font-bold'>Details</h1>
-                <div className='mt-1'>
-                    <textarea placeholder="" className="textarea textarea-bordered textarea-lg w-full max-w" ></textarea>
+                
+                <div className='mt-7'>
+                    <h1 className='text-xl font-bold'>Timeslot</h1>
+                    <div className='flex flex-row mt-4'>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <TimePicker
+                                label="Start"
+                                defaultValue={dayjs('2022-04-17T15:30')}
+                                renderInput={(params) => <TextField {...params} />}
+                                
+                                
+                            />
+                            <TimePicker
+                                label="End"
+                                value={dateValue}
+                                onChange={setDateValue}
+                                renderInput={(params) => <TextField {...params} />}
+                            />
+                        </LocalizationProvider>
+                    </div>
                 </div>
+
+                <div className='mt-7'>
+                    <h1 className='text-xl font-bold'>Details</h1>
+                    <textarea className="textarea textarea-bordered textarea-lg w-full max-w mt-4" placeholder=""></textarea>
+                </div>
+            </PageLayoutPT>
+
+            <div className="flex flex-row fixed justify-between items-center bottom-20 w-full mx-auto px-3 pr-8 pl-8 space-x-32">
+                <Link to="/my-clients">
+                    <button className='btn btn-outline btn-lg btn-primary flex-1' style={{width:100}}>Cancel</button>
+                </Link>
+                <Link to="/my-clients">
+                    <button className='btn btn-lg btn-primary text-white flex-1' style={{width:100}}>Add</button>
+                </Link>
             </div>
-
-        </PageLayoutPT>
-
-        <div className="flex flex-row fixed justify-between items-center bottom-20 w-full mx-auto px-3 pr-8 pl-8 space-x-32">
-            <Link to="/my-clients">
-                <button className='btn btn-outline btn-lg btn-primary flex-1' style={{width:100}}>Cancel</button>
-            </Link>
-            <Link to="/my-clients">
-                <button className='btn btn-lg btn-primary text-white flex-1' style={{width:100}}>Add</button>
-            </Link>
-        </div>
         </>
     );
 }
