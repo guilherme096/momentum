@@ -23,7 +23,7 @@ export default function Home() {
           link="/personal-trainer"
         />
       </div>
-      <div className="bg-transparent px-2 mt-2 mb-9 w-full h-36 flex">
+      <div className="bg-transparent px-1 mt-2 mb-9 w-full h-36 flex">
         <HomeCard
           title="Training Zone"
           isSquare={false}

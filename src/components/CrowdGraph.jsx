@@ -80,7 +80,7 @@ const LineGraph = () => {
           color: "#485B75",
           font: {
             family: "Nunito",
-            size: 12,
+            size: 10,
           },
         },
       },
