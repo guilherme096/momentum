@@ -3,6 +3,7 @@ import EndTrainingModal from "../../components/EndTrainingModal";
 import ExerciseCard from "../../components/ExerciseCard";
 import { useState } from "react";
 import { useEffect } from "react";
+import Camera from "../../components/Camera";
 
 const exercises = [
   {
@@ -22,6 +23,7 @@ const exercises = [
 export default function TrainingSupport() {
   const [currentExercise, setCurrentExercise] = useState(exercises[0]);
   const [sets, setSets] = useState([]);
+  const [showCamera, setShowCamera] = useState(false);
 
   useEffect(() => {
     let tempSets = [];
@@ -32,6 +34,7 @@ export default function TrainingSupport() {
   }, [currentExercise]);
   return (
     <>
+      {showCamera && <Camera />}
       <PageLayout pageName="Training Support">
         <h1 className="text-2xl font-bold mt-2">Next Exercise</h1>
         <div className="rounded-lg w-full h-48 shadow-md p-6 my-6 flex flex-row bg-base-200">
@@ -66,7 +69,10 @@ export default function TrainingSupport() {
         </div>
         <h1 className="text-2xl font-bold mt-2">Help</h1>
         <div>
-          <button className="btn btn-outline font-boldrounded mt-2 w-full">
+          <button
+            className="btn btn-outline font-boldrounded mt-2 w-full"
+            onClick={() => setShowCamera(true)}
+          >
             Scan Machine QR
           </button>
         </div>
