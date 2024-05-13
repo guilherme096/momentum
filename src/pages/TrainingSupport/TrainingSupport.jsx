@@ -36,7 +36,7 @@ export default function TrainingSupport() {
     <>
       {showCamera && <Camera />}
       <PageLayout pageName="Training Support">
-        <h1 className="text-2xl font-bold mt-0">Next Exercise</h1>
+        <h1 className="text-2xl font-bold">Next Exercise</h1>
         <div className="rounded-lg w-full h-48 shadow-md p-6 my-6 flex flex-row bg-base-200">
           <div className="w-1/2 ">
             <h3 className="text-2xl font-bold mb-3">{currentExercise.name}</h3>
@@ -67,7 +67,18 @@ export default function TrainingSupport() {
             </button>
           </div>
         </div>
-        <h1 className="text-2xl font-bold mt-3">Help</h1>
+        <div className="flex justify-end items-center w-full -mt-4">
+          <button
+            className=" text-white  btn bg-error font-boldrounded rounded-md w-full"
+            onClick={() => {
+              document.getElementById("my_modal_2").showModal();
+            }}
+          >
+            {" "}
+            End Training Session
+          </button>
+      </div>
+        <h1 className="text-2xl font-bold mt-5">Help</h1>
         <div>
           <button
             className="btn btn-outline font-boldrounded mt-2 w-full"
@@ -194,18 +205,6 @@ export default function TrainingSupport() {
           </div>
         </dialog>
       </PageLayout>
-
-      <div className="flex fixed justify-end items-center bottom-20 w-full pr-3 pl-3">
-        <button
-          className=" text-white  btn bg-error btn-outline font-boldrounded  rounded-md mt-2 w-full"
-          onClick={() => {
-            document.getElementById("my_modal_2").showModal();
-          }}
-        >
-          {" "}
-          End Training Session
-        </button>
-      </div>
     </>
   );
 }
