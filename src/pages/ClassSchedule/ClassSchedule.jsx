@@ -18,7 +18,7 @@ export default function ClassSchedule({ class_obj }) {
             <img
               src={class_obj.image}
               alt="classImage"
-              style={{ width: "100%", height: "15rem" }}
+              style={{ width: "100%", height: "12rem" }}
             />
           </div>
           <div className="flex justify-between items-end ">
@@ -28,7 +28,7 @@ export default function ClassSchedule({ class_obj }) {
             </h3>
           </div>
           <div>
-            <p className="text-xl font-light mt-2 text-justify">
+            <p className="text-lg font-light mt-2 text-justify">
               {class_obj.description}
             </p>
           </div>

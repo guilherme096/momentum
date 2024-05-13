@@ -4,7 +4,7 @@ export const classes = [
         name: "CrossFit",
         description:
             "A CrossFit class is a high-intensity workout featuring strength, cardio, and functional movements. It includes a warm-up, skill training, a Workout of the Day (WOD), and a cool-down, suitable for all fitness levels.",
-        image: "https://df-sportspecialist.it/cdn/shop/articles/differenza_crosstraining_crossfit.jpg?v=1703759738",
+        image: "https://www.clube-fitness.com/generated_files/siglas-do-crossfit1.jpg",
         date: "April 12th",
         ocupation_math: 12 / 20,
         ocupation: "12/20",
