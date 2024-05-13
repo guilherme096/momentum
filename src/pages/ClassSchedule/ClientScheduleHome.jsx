@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const classes = [
   {
-    name: "CossFit",
+    name: "CrossFit",
     startTime: "10 AM",
     endTime: "11 AM",
     color: "#fbf8cc",
