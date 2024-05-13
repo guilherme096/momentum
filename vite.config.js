@@ -16,7 +16,7 @@ export default defineConfig({
       manifest: {
         icons: [
           {
-            src: "logo_azul.png",
+            src: "maskable-icon-512x512.png",
             sizes: "192x192",
             type: "image/png",
             purpose: "any maskable",
