@@ -48,7 +48,6 @@ export default function TrainingSchedulePT() {
 
 
     return (
-        <>
             <PageLayoutPT pageName="Training Schedule">
                 <h1 className='text-xl font-bold'>Specifications</h1>
 
@@ -83,7 +82,7 @@ export default function TrainingSchedulePT() {
                 
                 <div className='mt-7'>
                     <h1 className='text-xl font-bold'>Timeslot</h1>
-                    <div className='flex flex-row mt-4'>
+                    <div className='flex flex-row mt-4 justify-between space-x-3'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <TimePicker
                                 label="Start"
@@ -103,7 +102,7 @@ export default function TrainingSchedulePT() {
                 </div>
 
                 <div className="mt-7">
-                    <h1 className="text-xl font-bold">Date</h1>
+                    <h1 className="text-xl font-bold">Datepicker</h1>
                     <div className="my-4">
                         <Calendar />
                     </div>
@@ -111,18 +110,17 @@ export default function TrainingSchedulePT() {
 
                 <div className='mt-7'>
                     <h1 className='text-xl font-bold'>Details</h1>
-                    <textarea className="textarea textarea-bordered textarea-lg w-full max-w mt-4" placeholder=""></textarea>
+                    <textarea className="textarea textarea-bordered textarea-lg w-full max-w mt-4" placeholder="None."></textarea>
+                </div>
+
+                <div className="flex flex-row justify-between items-center bottom-20 w-full mx-auto px-3 pr-8 pl-8 space-x-32">
+                    <Link to="/my-clients">
+                        <button className='btn btn-outline btn-lg btn-primary flex-1' style={{width:100}}>Cancel</button>
+                    </Link>
+                    <Link to="/my-clients">
+                        <button className='btn btn-lg btn-primary text-white flex-1' style={{width:100}}>Add</button>
+                    </Link>
                 </div>
             </PageLayoutPT>
-
-            <div className="flex flex-row fixed justify-between items-center bottom-20 w-full mx-auto px-3 pr-8 pl-8 space-x-32">
-                <Link to="/my-clients">
-                    <button className='btn btn-outline btn-lg btn-primary flex-1' style={{width:100}}>Cancel</button>
-                </Link>
-                <Link to="/my-clients">
-                    <button className='btn btn-lg btn-primary text-white flex-1' style={{width:100}}>Add</button>
-                </Link>
-            </div>
-        </>
     );
 }

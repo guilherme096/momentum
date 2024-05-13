@@ -21,17 +21,17 @@ export default function PersonalTrainer() {
                 </div>
             </div>
 
-            <h1 className="text-2xl font-bold">Next Class</h1>
-            
-            <div className='flex items-center flex-col mt-4 justify-between'>
-                <div className="flex flex-row items-center">
-                    <div className="text-5xl font-bold">20</div>
-                    <div className='flex flex-col ml-2 items-center '>
-                        <div className="text-lg leading-tight">APR</div>
-                        <div className="text-lg leading-tight">2024</div>
-                    </div>
+      <h1 className="text-2xl font-bold">Next Class</h1>
 
-                <div className="border border-gray-500 py-5 mr-5 ml-5"></div>
+      <div className="flex items-center flex-col mt-4 justify-between">
+        <div className="flex flex-row items-center">
+          <div className="text-5xl font-bold">20</div>
+          <div className="flex flex-col ml-2 items-center ">
+            <div className="text-lg leading-tight">APR</div>
+            <div className="text-lg leading-tight">2024</div>
+          </div>
+
+          <div className="border border-gray-500 py-5 mr-5 ml-5"></div>
 
                <div className="text-4xl font-bold">18h00</div>
 

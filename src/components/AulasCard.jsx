@@ -1,12 +1,11 @@
-import CardLayout from "../layouts/CardLayout"
+import CardLayout from "../layouts/CardLayout";
 
-export default function ExerciseCard({name, time}) {
-    return (
-        <CardLayout>
-            <h3 className="text-xl font-bold mb-1">{name}</h3> 
-            <div className='w-full flex flex-row justify-between'>
-                <div><p className=" text-sm inline ml-1">{time}</p></div>
-            </div>
-        </CardLayout>
-    );
+export default function ExerciseCard({ name, time, date }) {
+  return (
+    <CardLayout>
+      <h3 className="text-xl font-bold mb-1">{name}</h3>
+      <p className="text-sm mb-0 mt-2">{date}</p>
+      <p className="text-sm inline">{time}</p>
+    </CardLayout>
+  );
 }
