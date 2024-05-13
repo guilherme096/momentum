@@ -18,7 +18,7 @@ export default function ClassSchedule({ class_obj }) {
             <img
               src={class_obj.image}
               alt="classImage"
-              style={{ width: "100%", height: "200px" }}
+              style={{ width: "100%", height: "15rem" }}
             />
           </div>
           <div className="flex justify-between items-end ">
@@ -35,7 +35,9 @@ export default function ClassSchedule({ class_obj }) {
         </div>
         <ConfirmationModal></ConfirmationModal>
 
-        <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3">
+        
+      </PageLayout>
+      <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3">
           <div className="stats lg:stats-horizontal shadow-md min-w-full items-center overflow-clip">
             <div className="stat text-center justify-center">
               <div className="stat-title mb-6 text-xs">Timestamp</div>
@@ -76,7 +78,6 @@ export default function ClassSchedule({ class_obj }) {
             </div>
           </div>
         </div>
-      </PageLayout>
     </>
   );
 }
