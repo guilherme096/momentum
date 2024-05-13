@@ -12,6 +12,7 @@ import MyClientsPT from "./pages/MyClientsPT/MyClientsPT";
 import TrainingSchedulePT from "./pages/TrainingSchedulePT/TrainingSchedulePT";
 import TrainingSupportGeneral from "./pages/TrainingSupport/TrainingSupportGeneral";
 import Settings from "./pages/Settings";
+import TrainingSchedulePTClient from "./pages/TrainingSchedulePT/TrainingSchedulePTClient";
 
 const myclass = classes[0];
 
@@ -75,6 +76,11 @@ const pagesData = [
     path: "training-schedule-pt",
     element: <TrainingSchedulePT />,
     title: "training-schedule-pt",
+  },
+  {
+    path: "training-schedule-pt-client",
+    element: <TrainingSchedulePTClient />,
+    title: "training-schedule-pt-client",
   },
   {
     path: "general-training",

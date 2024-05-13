@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function ClientModal({ client, onClose }) {
   useEffect(() => {
@@ -86,7 +87,12 @@ export default function ClientModal({ client, onClose }) {
             className="btn btn-primary w-full text-white"
             onClick={() => {}}
           >
-            Schedule Class
+            <Link
+              to="/training-schedule-pt-client"
+              className="w-full h-full flex flex-col justify-center items-center"
+            >
+              Schedule Class
+            </Link>
           </button>
         </div>
       </div>
