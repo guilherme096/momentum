@@ -1,4 +1,6 @@
+import Calendar from 'react-calendar';
 import PageLayout from '../../layouts/PageLayout';
+import PtCalendar from '../../components/PtCalendar';
 
 export default function PersonalTrainer() {
     return (
@@ -31,11 +33,10 @@ export default function PersonalTrainer() {
 
                 <div className="border border-gray-500 py-5 mr-5 ml-5"></div>
 
-                <div className="text-4xl font-bold">18H00</div>
+               <div className="text-4xl font-bold">18h00</div>
 
             </div>
                 <div className="text-lg mt-3">plan: leg day</div>
-
             </div>
 
         </PageLayout>
