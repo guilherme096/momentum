@@ -10,7 +10,7 @@ export default function Profile() {
 
                     <div className="avatar">
                         <div className="w-24 rounded-full">
-                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img src="https://cdn.record.pt/images/2024-01/img_476x268$2024_01_15_19_32_59_2210898.jpg"></img>
                         </div>
                     </div>
 

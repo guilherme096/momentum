@@ -34,7 +34,7 @@ export default function TrainingSupportGeneral() {
           <LogCalendar />
         </div>
         <h1 className="text-2xl font-bold mt-6">Workout Presets</h1>
-        <div className="flex flex-row flex-wrap justify-around items-center mt-5">
+        <div className="flex flex-row flex-wrap justify-around items-center mt-5 mb-16">
           {presets.map((preset) => (
             <div className="flex flex-col justify-center items-center text-center h-32 w-32 rounded-lg bg-base-200 p-4 shadow-lg font-semibold m-4">
               {preset}
