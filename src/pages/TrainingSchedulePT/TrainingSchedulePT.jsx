@@ -61,7 +61,7 @@ export default function TrainingSchedulePT() {
                                     label=""
                                     onChange={setSelectedPerson}
                                     onToggle={togglePersonDropdown}
-                                    dropdownStyle={{ zIndex: isOpenPerson ? 100 : 1 }}
+                                    dropdownStyle={{ zIndex: 100 }}
                                 />
                             </div>
                         </div>
@@ -73,7 +73,7 @@ export default function TrainingSchedulePT() {
                                     label=""
                                     onChange={setSelectedPlan}
                                     onToggle={togglePlanDropdown}
-                                    style={{ zIndex: isOpenPlan ? 2 : 1 }}
+                                    dropdownStyle={{ zIndex: 100 }}
                                 />
                             </div>
                         </div>
@@ -88,8 +88,6 @@ export default function TrainingSchedulePT() {
                                 label="Start"
                                 defaultValue={dayjs('2022-04-17T15:30')}
                                 renderInput={(params) => <TextField {...params} />}
-                                
-                                
                             />
                             <TimePicker
                                 label="End"
