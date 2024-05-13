@@ -8,7 +8,7 @@ export default function PersonalTrainer() {
 
                     <div className="avatar">
                         <div className="w-24 rounded-full">
-                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <img src="https://scontent.fopo2-2.fna.fbcdn.net/v/t39.30808-6/300763703_421143786665040_2928983804635098984_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGFXd43cbMLWtyarPZXKI9ELmGdFsKnwO8uYZ0WwqfA74Z-_27vZ35OVTPdoHbYlr6lpb1x2ohmLlo7UDIan3op&_nc_ohc=MXJYpTMf4dQQ7kNvgFcigZk&_nc_ht=scontent.fopo2-2.fna&oh=00_AYBPqJ299bnAWEovc0AJaPEX3vae7RFSAnfCi27Uc-cwuA&oe=6648656D" />
                         </div>
                     </div>
 
@@ -37,7 +37,6 @@ export default function PersonalTrainer() {
                 <div className="text-lg mt-3">plan: leg day</div>
 
             </div>
-            <HeatCalendar/>
 
         </PageLayout>
     );
