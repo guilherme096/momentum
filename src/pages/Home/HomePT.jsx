@@ -20,6 +20,7 @@ export default function HomePT() {
           link="/my-clients"
         />
       </div>
+      <h1 className="text-xl pl-3 font-bold -mb-1">General Calendar</h1>
       <div className="p-3">
         <PtCalendar />
       </div>
