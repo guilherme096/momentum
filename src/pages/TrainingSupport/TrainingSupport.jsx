@@ -239,7 +239,7 @@ export default function TrainingSupport() {
 
       <div className="flex fixed justify-end items-center bottom-20 w-full pr-3 pl-3">
         <button
-          className="btn btn-error btn-outline  font-boldrounded mt-2 w-full"
+          className=" text-white  btn bg-error btn-outline font-boldrounded  rounded-md mt-2 w-full"
           onClick={() => document.getElementById("my_modal_2").showModal()}
         >
           {" "}
