@@ -21,8 +21,8 @@ function CustomLink({ to, children, ...props }) {
     const scale = isActive ? { scale: 1.12} : { scale: 1, opacity: 0.7};
 
     return (
-        <li className={isActive ? "active" : ""}>
-            <Link to={to} {...props}>
+        <li className={isActive ? "active" : ""} style={{width:'100%'}}>
+            <Link to={to} {...props} className="flex justify-center items-center size-full">
                 <motion.div animate={scale} transition={{ duration: 0.3 }} >
                     {children}
                 </motion.div>
