@@ -1,6 +1,8 @@
 import LogCalendar from "../../components/LogCalendar";
 import { Link } from "react-router-dom";
 import PageLayout from "../../layouts/PageLayout";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const presets = [
   "Full Body",
   "Upper Body",
@@ -32,7 +34,12 @@ export default function TrainingSupportGeneral() {
         <div className="flex flex-col w-full h-fit justify-center items-center mt-3">
           <LogCalendar />
         </div>
-        <h1 className="text-2xl font-bold mt-6">Workout Presets</h1>
+        <div className="flex flex-row justify-between items-center mt-4">
+          <h1 className="text-2xl font-bold ">Workout Presets</h1>
+          <div className="p-4">
+            <FontAwesomeIcon icon={faPlusCircle} className="size-5" />
+          </div>
+        </div>
         <div className="flex flex-row flex-wrap justify-around items-center mt-5 mb-16">
           {presets.map((preset) => (
             <div className="flex flex-col justify-center items-center text-center h-32 w-32 rounded-lg bg-base-200 p-4 shadow-lg font-semibold m-4">
