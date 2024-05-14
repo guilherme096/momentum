@@ -19,7 +19,7 @@ export default function ClientModal({ client, onClose }) {
   return (
     <dialog id="my_modal_2" className="modal" onClick={handleOutsideClick}>
       <div className="modal-box" onClick={(e) => e.stopPropagation()}>
-        <div className="flex items-center justify-center space-x-12 mt-2">
+        <div className="flex items-center justify-center space-x-12 mt-1">
           <div className="avatar">
             <div className="w-24 h-24 rounded-xl overflow-hidden">
               <img

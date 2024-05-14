@@ -101,7 +101,7 @@ export default function MyClientsPT() {
       <div className="rounded-lg shadow-lg p-4 bg-base-200 mt-2">
         {
           <Fragment>
-            <h3 className="text-xl font-bold mb-1">Sara Faria</h3>
+            <h3 className="text-xl font-bold mb-1">Sara Matos</h3>
             <div className="w-full flex flex-row">
               <div>
                 <p className="text-sm font-bold inline">Time:</p>

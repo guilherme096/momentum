@@ -15,8 +15,8 @@ export default function PersonalTrainer() {
                     </div>
                 </div>
                 <div className="flex flex-col items-start justify-center">
-                    <h1 className="text-2xl font-bold mt-2 ">Kevin Monteiro</h1>
-                    <h3 className="stat-title text-xl mb-1">Personal Trainer</h3>
+                    <h1 className="text-xl font-bold mt-2 ">Kevin Monteiro</h1>
+                    <h3 className="stat-title text-lg mb-1">Personal Trainer</h3>
                 </div>
             </div>
 
