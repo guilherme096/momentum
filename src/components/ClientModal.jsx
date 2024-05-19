@@ -91,7 +91,7 @@ export default function ClientModal({ client, onClose }) {
               to="/training-schedule-pt-client"
               className="w-full h-full flex flex-col justify-center items-center"
             >
-              Schedule Class
+              Add Class
             </Link>
           </button>
         </div>
