@@ -75,6 +75,7 @@ export default function MyClientsPT() {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedClient, setSelectedClient] = useState(null);
+  const [query, setQuery] = useState("");
 
   const handleCardClick = (client) => {
     setSelectedClient(client);
@@ -116,20 +117,44 @@ export default function MyClientsPT() {
         }
       </div>
       <h1 className="text-xl font-bold mt-8">Client Details</h1>
-      <div className="flex flex-row overflow-clip flex-wrap max-w-full w-full justify-evenly py-4">
-        {people.map((person) => (
-          <div
-            key={person.id}
-            className="shrink-0"
-            onClick={() => handleCardClick(person)}
-          >
-            <CardLayout image={person.img} hasImage={!!person.img}>
-              <div className="flex flex-col justify-center items-center h-full">
-                <div className="text-center text-sm">{person.name}</div>
-              </div>
-            </CardLayout>
+      <div className="flex justify-center items-center mt-4">
+        <div className="join">
+          <div>
+            <div>
+              <input
+                className="input input-bordered join-item "
+                placeholder="Search"
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </div>
           </div>
-        ))}
+          <div className="indicator">
+            <button className="btn join-item">Search</button>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-row overflow-clip flex-wrap max-w-full w-full justify-evenly py-4">
+        {people.map((person) => {
+          if (
+            query &&
+            !person.name.toLowerCase().includes(query.toLowerCase())
+          ) {
+            return null;
+          }
+          return (
+            <div
+              key={person.id}
+              className="shrink-0"
+              onClick={() => handleCardClick(person)}
+            >
+              <CardLayout image={person.img} hasImage={!!person.img}>
+                <div className="flex flex-col justify-center items-center h-full">
+                  <div className="text-center text-sm">{person.name}</div>
+                </div>
+              </CardLayout>
+            </div>
+          );
+        })}
       </div>
       {modalOpen && selectedClient && (
         <ClientModal
