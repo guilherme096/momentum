@@ -23,7 +23,9 @@ export default function QRCard() {
 
   const toggleModal = () => {
     if (!timerActive) return; // Prevents expanding QR code when timer is not active
-    setIsModalOpen(!isModalOpen);
+    if (isModalOpen)
+      handleStop(); // Close modal when QR code is expanded
+    else setIsModalOpen(!isModalOpen);
   };
 
   const backdropStyles = {
