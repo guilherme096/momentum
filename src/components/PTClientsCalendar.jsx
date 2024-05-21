@@ -67,7 +67,7 @@ export default function PTClientsCalendar() {
     const tileClassName = ({ date, view }) => {
         if (view === "month") {
             if (isSpecialDay(date)) {
-                return "text-red-500";
+                return "react-calendar-workout";
             }
         }
     };

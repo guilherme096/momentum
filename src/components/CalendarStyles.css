@@ -6,6 +6,7 @@
   font-family: Montserrat, sans-serif;
   line-height: 1.125em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .react-calendar--doubleView {
@@ -35,7 +36,7 @@
   margin: 0;
   border: 0;
   outline: none;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 .react-calendar button:enabled:hover {
@@ -133,6 +134,12 @@
 
 .react-calendar__tile--hasActive {
   background: #76baff;
+}
+
+.react-calendar-workout {
+    color: red;
+    font-weight: bold;
+    background-color: #f0f0ff;
 }
 
 .react-calendar__tile--hasActive:enabled:hover,

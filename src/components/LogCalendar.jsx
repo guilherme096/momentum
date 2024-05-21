@@ -21,7 +21,7 @@ export default function LogCalendar() {
     const tileClassName = ({ date, view }) => {
         if (view === "month") {
             if (isSpecialDay(date)) {
-                return "text-red-500";
+                return "react-calendar-workout";
             }
         }
     };
