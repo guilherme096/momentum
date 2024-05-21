@@ -78,17 +78,8 @@ export default function TrainingSupport() {
             {" "}
             End Training Session
           </button>
-      </div>
-        <h1 className="text-2xl font-bold mt-10">Help</h1>
-        <div>
-          <button
-            className="btn btn-outline font-boldrounded mt-2 w-full"
-            onClick={() => setShowCamera(true)}
-          >
-            Scan Machine QR
-          </button>
         </div>
-        <h1 className="text-2xl font-bold mt-10">Upcoming Exercises</h1>
+        <h1 className="text-2xl font-bold mt-6">Upcoming Exercises</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
           <ExerciseCard
             name="Leg Press"
@@ -97,7 +88,7 @@ export default function TrainingSupport() {
             weight="150kg"
           ></ExerciseCard>
         </div>
-        <h1 className="text-2xl font-bold mt-10">Exercises Done</h1>
+        <h1 className="text-2xl font-bold mt-6">Exercises Done</h1>
         <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
           {doneExercises &&
             doneExercises.map((exercise, index) => (
@@ -170,5 +161,5 @@ export default function TrainingSupport() {
         </dialog>
       </PageLayout>
     </>
-    );
+  );
 }

@@ -20,9 +20,9 @@ export default function TrainingSupportGeneral() {
         <div className="rounded-lg shadow-lg p-4 bg-base-200">
           <h1 className="text-2xl font-bold">New Session</h1>
           <div className="flex flex-col w-full h-fit justify-center items-center mt-4">
-            <button className="h-16 w-full rounded-md bg-primary font-bold flex flex-col justify-center items-center text-white">
+            <button className="h-16 w-full rounded-lg overflow-auto font-bold flex flex-col justify-center items-center text-white">
               <Link
-                className="w-full h-full text-center flex flex-col justify-center items-center"
+                className="w-full bg-green-700 btn h-full text-white rounded-lg text-center flex flex-col justify-center items-center text-xl"
                 to="/start-train"
               >
                 Start
