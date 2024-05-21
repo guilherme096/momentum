@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Aula from "./Aula";
+import { useState } from "react";
 
 export default function DailyAgenda({
   classes,
@@ -8,6 +9,11 @@ export default function DailyAgenda({
   link,
   addBookingCallback,
 }) {
+  const [index, setDay] = useState(0);
+
+  const changeDay = (amount) => {
+    setDay(index + amount);
+  };
   // Helper to calculate grid row based on time
   const timeToGridRow = (time) => {
     const [hour, modifier] = time.split(" ");
@@ -30,8 +36,10 @@ export default function DailyAgenda({
     <div className="mt-3 bg-white rounded-lg p-2">
       {/* Day and month display */}
       <div className="flex justify-center items-center h-12 px-4 space-x-4">
-        <p className="text-3xl font-bold">{day.month}</p>
+        <button onClick={() => changeDay(-1)}>&lt;</button>
+        <p className="text-3xl font-bold">{day + 7}</p>
         <p className="text-3xl font-light">{day.week}</p>
+        <button onClick={() => changeDay(1)}>&lt;</button>
       </div>
       {/* Grid layout for time labels and classes */}
       <div className="grid" style={gridStyle}>
@@ -61,7 +69,7 @@ export default function DailyAgenda({
           </div>
         ))}
         {/* Classes rendered in dynamic columns */}
-        {classes.map((aula, index) => {
+        {classes[index].map((aula, index) => {
           const startRow = timeToGridRow(aula.startTime);
           const endRow = timeToGridRow(aula.endTime);
           const rowSpan = endRow - startRow + 1; // Ensure inclusive span

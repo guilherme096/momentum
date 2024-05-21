@@ -5,37 +5,65 @@ import AulasCard from "../../components/AulasCard";
 import { useState } from "react";
 
 const classes = [
-  {
-    name: "CrossFit",
-    startTime: "10 AM",
-    endTime: "11 AM",
-    color: "#fbf8cc",
-  },
+  [
+    {
+      name: "CrossFit",
+      startTime: "10 AM",
+      endTime: "11 AM",
+      color: "#fbf8cc",
+    },
 
-  {
-    name: "Cycling",
-    startTime: "1 PM",
-    endTime: "3 PM",
-    color: "#fde4cf",
-  },
-  {
-    name: "Yoga",
-    startTime: "8 AM",
-    endTime: "9 AM",
-    color: "#ffcfd2",
-  },
-  {
-    name: "Pilates",
-    startTime: "5 PM",
-    endTime: "6 PM",
-    color: "#d1ffe6",
-  },
-  {
-    name: "Boxing",
-    startTime: "7 PM",
-    endTime: "8 PM",
-    color: "#a3c4f3",
-  },
+    {
+      name: "Cycling",
+      startTime: "1 PM",
+      endTime: "3 PM",
+      color: "#fde4cf",
+    },
+    {
+      name: "Yoga",
+      startTime: "8 AM",
+      endTime: "9 AM",
+      color: "#ffcfd2",
+    },
+    {
+      name: "Pilates",
+      startTime: "5 PM",
+      endTime: "6 PM",
+      color: "#d1ffe6",
+    },
+    {
+      name: "Boxing",
+      startTime: "7 PM",
+      endTime: "8 PM",
+      color: "#a3c4f3",
+    },
+  ],
+  [
+    {
+      name: "Cycling",
+      startTime: "1 PM",
+      endTime: "3 PM",
+      color: "#fde4cf",
+    },
+    {
+      name: "Yoga",
+      startTime: "8 AM",
+      endTime: "9 AM",
+      color: "#ffcfd2",
+    },
+    {
+      name: "Pilates",
+      startTime: "5 PM",
+      endTime: "6 PM",
+      color: "#d1ffe6",
+    },
+    {
+      name: "Boxing",
+      startTime: "7 PM",
+      endTime: "8 PM",
+      color: "#a3c4f3",
+    },
+  ],
 ];
 
 const day = {
