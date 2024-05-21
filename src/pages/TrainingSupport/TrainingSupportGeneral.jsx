@@ -17,7 +17,7 @@ export default function TrainingSupportGeneral() {
   return (
     <>
       <PageLayout pageName="Training Support">
-        <div className="rounded-lg shadow-lg p-4 bg-base-200">
+        <div className="rounded-lg shadow-lg p-4 bg-white-3">
           <h1 className="text-2xl font-bold">New Session</h1>
           <div className="flex flex-col w-full h-fit justify-center items-center mt-4">
             <button className="h-16 w-full rounded-lg overflow-auto font-bold flex flex-col justify-center items-center text-white">
@@ -30,7 +30,7 @@ export default function TrainingSupportGeneral() {
             </button>
           </div>
         </div>
-        <h1 className="text-2xl font-bold mt-5">Training Logs</h1>
+        <h1 className="text-2xl font-bold mt-7">Training Logs</h1>
         <div className="flex flex-col w-full h-fit justify-center items-center mt-3">
           <LogCalendar />
         </div>

@@ -48,7 +48,7 @@ export default function StartTrain() {
           <div className="pt-10 justify-center flex w-full">
             <Link to="/training-support">
               <button className="btn btn-wide btn-primary mx-auto btn-xl text-white">
-                Start
+                Begin
               </button>
             </Link>
           </div>
