@@ -10,6 +10,10 @@ export default function ClassSchedule({ class_obj }) {
     ConfirmationModalRef.current.showModal();
   };
 
+  function showSuccess() {
+    alert("Success");
+  }
+
   return (
     <>
       <PageLayout pageName="Classes">
@@ -33,7 +37,7 @@ export default function ClassSchedule({ class_obj }) {
             </p>
           </div>
         </div>
-        <ConfirmationModal></ConfirmationModal>
+        <ConfirmationModal />
       </PageLayout>
       <div className="flex fixed justify-between items-center bottom-20 w-full mx-auto px-3">
         <div className="stats lg:stats-horizontal shadow-lg min-w-full items-center overflow-clip bg-gray-50">

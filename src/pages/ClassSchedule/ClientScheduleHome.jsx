@@ -132,12 +132,13 @@ const classes = [
       endTime: "8 PM",
       color: "#a3c4f3",
     },
-  ]
+  ],
 ];
 
 export default function ClientScheduleHome() {
-  const clientBookings =
+  const stored_clientBookings =
     JSON.parse(localStorage.getItem("scheduled_classes")) || [];
+  const [clientBookings, setClasses] = useState(stored_clientBookings);
 
   console.log(clientBookings);
 
