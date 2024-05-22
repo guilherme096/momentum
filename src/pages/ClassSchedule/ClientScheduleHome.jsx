@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DailyAgenda from "../../components/DailyAgenda";
 import AulasCard from "../../components/AulasCard";
 import { useState } from "react";
+import ClassSchedule from "./ClassSchedule";
 
 const classes = [
   [
@@ -11,6 +12,8 @@ const classes = [
       startTime: "10 AM",
       endTime: "11 AM",
       color: "#fbf8cc",
+      teacher: "Kevin Gordor",
+      date: "2015-05-09",
     },
 
     {
@@ -161,7 +164,7 @@ export default function ClientScheduleHome() {
         <h1 className="text-xl font-bold mt-2"> All bookings</h1>
       </div>
 
-      <DailyAgenda link={"/class-schedule"} classes={classes} />
+      <DailyAgenda link="/class-schedule" classes={classes} />
     </PageLayout>
   );
 }

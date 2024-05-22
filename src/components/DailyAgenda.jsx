@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Aula from "./Aula";
 import TrainingCombobox from "./Combobox";
 
-export default function DailyAgenda({classes,link,addBookingCallback,}) {
+export default function DailyAgenda({ classes, link, addBookingCallback }) {
   const [index, setDay] = useState(0);
   const [month, setMonth] = useState(0);
 
@@ -20,18 +20,18 @@ export default function DailyAgenda({classes,link,addBookingCallback,}) {
   };
 
   const months = [
-    {id: 0, name: "Jan"},
-    {id: 1, name: "Feb"},
-    {id: 2, name: "Mar"},
-    {id: 3, name: "Apr"},
-    {id: 4, name: "May"},
-    {id: 5, name: "Jun"},
-    {id: 6, name: "Jul"},
-    {id: 7, name: "Aug"},
-    {id: 8, name: "Sep"},
-    {id: 9, name: "Oct"},
-    {id: 10, name: "Nov"},
-    {id: 11, name: "Dec"},
+    { id: 0, name: "Jan" },
+    { id: 1, name: "Feb" },
+    { id: 2, name: "Mar" },
+    { id: 3, name: "Apr" },
+    { id: 4, name: "May" },
+    { id: 5, name: "Jun" },
+    { id: 6, name: "Jul" },
+    { id: 7, name: "Aug" },
+    { id: 8, name: "Sep" },
+    { id: 9, name: "Oct" },
+    { id: 10, name: "Nov" },
+    { id: 11, name: "Dec" },
   ];
 
   const changeDay = (amount) => {
@@ -52,7 +52,7 @@ export default function DailyAgenda({classes,link,addBookingCallback,}) {
 
   const [selectedMonth, setSelectedMonth] = useState(months[4]);
   const toggleMonthDropdown = (isOpen) => {
-    setIsOpenMonth(isOpen)
+    setIsOpenMonth(isOpen);
   };
 
   // Helper to calculate grid row based on time
@@ -78,24 +78,23 @@ export default function DailyAgenda({classes,link,addBookingCallback,}) {
       {/* Day and month display */}
       <div className="flex justify-center items-center h-12 px-4 space-x-4">
         <button onClick={() => changeDay(-1)}>
-          <FontAwesomeIcon icon={faArrowLeft} className="text-lg" /> 
+          <FontAwesomeIcon icon={faArrowLeft} className="text-lg" />
         </button>
         <div className="flex w-30 gap-5">
-          <p className="text-3xl w-7 font-bold">{(index + 1)}</p>
+          <p className="text-3xl w-7 font-bold">{index + 1}</p>
           <p className="text-3xl w-16 font-light">{weekDays[index % 7]}</p>
         </div>
         <button className="" onClick={() => changeDay(1)}>
           <FontAwesomeIcon icon={faArrowRight} className="text-lg" />
         </button>
         <div className="flex flex-col mb-2">
-          <TrainingCombobox 
+          <TrainingCombobox
             items={months}
             label=""
-            onChange={setSelectedMonth}       
+            onChange={setSelectedMonth}
             onToggle={toggleMonthDropdown}
-            dropdownStyle={{ zIndex: 100 }}>
-          </TrainingCombobox>
-
+            dropdownStyle={{ zIndex: 100 }}
+          ></TrainingCombobox>
         </div>
       </div>
       {/* Grid layout for time labels and classes */}
@@ -137,7 +136,6 @@ export default function DailyAgenda({classes,link,addBookingCallback,}) {
               rowS={rowSpan}
               bgColor={aula.color}
               aula={aula}
-              link={link}
               schedule={addBookingCallback}
             />
           );
