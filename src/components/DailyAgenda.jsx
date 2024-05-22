@@ -1,19 +1,60 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Aula from "./Aula";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import Aula from "./Aula";
+import TrainingCombobox from "./Combobox";
 
-export default function DailyAgenda({
-  classes,
-  day,
-  link,
-  addBookingCallback,
-}) {
+export default function DailyAgenda({ classes, link, addBookingCallback }) {
   const [index, setDay] = useState(0);
+  const [month, setMonth] = useState(0);
+
+  const weekDays = {
+    0: "Sun",
+    1: "Mon",
+    2: "Tue",
+    3: "Wed",
+    4: "Thu",
+    5: "Fri",
+    6: "Sat",
+  };
+
+  const months = [
+    { id: 0, name: "Jan" },
+    { id: 1, name: "Feb" },
+    { id: 2, name: "Mar" },
+    { id: 3, name: "Apr" },
+    { id: 4, name: "May" },
+    { id: 5, name: "Jun" },
+    { id: 6, name: "Jul" },
+    { id: 7, name: "Aug" },
+    { id: 8, name: "Sep" },
+    { id: 9, name: "Oct" },
+    { id: 10, name: "Nov" },
+    { id: 11, name: "Dec" },
+  ];
 
   const changeDay = (amount) => {
-    setDay(index + amount);
+    setDay((prevIndex) => {
+      const newIndex = (prevIndex + amount + 30) % 30;
+      return newIndex;
+    });
   };
+
+  const changeMonth = (amount) => {
+    setMonth((prevIndex) => {
+      const newIndex = (prevIndex + amount + 12) % 12;
+      return newIndex;
+    });
+  };
+
+  const [isOpenMonth, setIsOpenMonth] = useState(false);
+
+  const [selectedMonth, setSelectedMonth] = useState(months[4]);
+  const toggleMonthDropdown = (isOpen) => {
+    setIsOpenMonth(isOpen);
+  };
+
   // Helper to calculate grid row based on time
   const timeToGridRow = (time) => {
     const [hour, modifier] = time.split(" ");
@@ -33,13 +74,28 @@ export default function DailyAgenda({
   };
 
   return (
-    <div className="mt-3 bg-white rounded-lg p-2">
+    <div className="mt-3 bg-white rounded-lg p-4 px-2">
       {/* Day and month display */}
       <div className="flex justify-center items-center h-12 px-4 space-x-4">
-        <button onClick={() => changeDay(-1)}>&lt;</button>
-        <p className="text-3xl font-bold">{day + 7}</p>
-        <p className="text-3xl font-light">{day.week}</p>
-        <button onClick={() => changeDay(1)}>&lt;</button>
+        <button onClick={() => changeDay(-1)}>
+          <FontAwesomeIcon icon={faArrowLeft} className="text-lg" />
+        </button>
+        <div className="flex w-30 gap-5">
+          <p className="text-3xl w-7 font-bold">{index + 1}</p>
+          <p className="text-3xl w-16 font-light">{weekDays[index % 7]}</p>
+        </div>
+        <button className="" onClick={() => changeDay(1)}>
+          <FontAwesomeIcon icon={faArrowRight} className="text-lg" />
+        </button>
+        <div className="flex flex-col mb-2">
+          <TrainingCombobox
+            items={months}
+            label=""
+            onChange={setSelectedMonth}
+            onToggle={toggleMonthDropdown}
+            dropdownStyle={{ zIndex: 100 }}
+          ></TrainingCombobox>
+        </div>
       </div>
       {/* Grid layout for time labels and classes */}
       <div className="grid" style={gridStyle}>
@@ -59,28 +115,27 @@ export default function DailyAgenda({
           "7 PM",
           "8 PM",
           "9 PM",
-        ].map((time, index) => (
+        ].map((time, timeIndex) => (
           <div
-            key={index}
+            key={timeIndex}
             className="text-gray-700 text-left"
-            style={{ gridRowStart: index + 1, gridColumn: 1 }}
+            style={{ gridRowStart: timeIndex + 1, gridColumn: 1 }}
           >
             {time}
           </div>
         ))}
         {/* Classes rendered in dynamic columns */}
-        {classes[index].map((aula, index) => {
+        {classes[index % classes.length].map((aula, aulaIndex) => {
           const startRow = timeToGridRow(aula.startTime);
           const endRow = timeToGridRow(aula.endTime);
           const rowSpan = endRow - startRow + 1; // Ensure inclusive span
           return (
             <Aula
-              key={index}
+              key={aulaIndex}
               startr={startRow}
               rowS={rowSpan}
               bgColor={aula.color}
               aula={aula}
-              link={link}
               schedule={addBookingCallback}
             />
           );
