@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faArrowRight, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Aula from "./Aula";
 
 export default function DailyAgenda({
@@ -10,6 +10,7 @@ export default function DailyAgenda({
   addBookingCallback,
 }) {
   const [index, setDay] = useState(0);
+  const [month, setMonth] = useState(0);
 
   const weekDays = {
     0: "Sun",
@@ -21,9 +22,31 @@ export default function DailyAgenda({
     6: "Sat",
   };
 
+  const months = {
+    0: "Jan",
+    1: "Feb",
+    2: "Mar",
+    3: "Apr",
+    4: "May",
+    5: "Jun",
+    6: "Jul",
+    7: "Aug",
+    8: "Sep",
+    9: "Oct",
+    10: "Nov",
+    11: "Dec",
+  }
+
   const changeDay = (amount) => {
     setDay((prevIndex) => {
       const newIndex = (prevIndex + amount + 30) % 30;
+      return newIndex;
+    });
+  };
+
+  const changeMonth = (amount) => {
+    setMonth((prevIndex) => {
+      const newIndex = (prevIndex + amount + 12) % 12;
       return newIndex;
     });
   };
@@ -47,7 +70,7 @@ export default function DailyAgenda({
   };
 
   return (
-    <div className="mt-3 bg-white rounded-lg p-2">
+    <div className="mt-3 bg-white rounded-lg p-4 px-2">
       {/* Day and month display */}
       <div className="flex justify-center items-center h-12 px-4 space-x-4">
         <button onClick={() => changeDay(-1)}>
@@ -57,9 +80,18 @@ export default function DailyAgenda({
           <p className="text-3xl w-7 font-bold">{(index + 1)}</p>
           <p className="text-3xl w-16 font-light">{weekDays[index % 7]}</p>
         </div>
-        <button onClick={() => changeDay(1)}>
+        <button className="" onClick={() => changeDay(1)}>
           <FontAwesomeIcon icon={faArrowRight} className="text-lg" />
         </button>
+        <div className="flex flex-col mb-2">
+          <button onClick={() => changeMonth(1)}>
+            <FontAwesomeIcon icon={faArrowUp} className="text-lg" />
+          </button> 
+          <p className="text-sm">{months[month]}</p>
+          <button onClick={() => changeMonth(-1)}>
+            <FontAwesomeIcon icon={faArrowDown} className="text-lg" />
+          </button> 
+        </div>
       </div>
       {/* Grid layout for time labels and classes */}
       <div className="grid" style={gridStyle}>
