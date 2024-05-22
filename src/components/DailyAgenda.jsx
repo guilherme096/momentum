@@ -3,12 +3,9 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight, faArrowUp, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import Aula from "./Aula";
+import TrainingCombobox from "./Combobox";
 
-export default function DailyAgenda({
-  classes,
-  link,
-  addBookingCallback,
-}) {
+export default function DailyAgenda({classes,link,addBookingCallback,}) {
   const [index, setDay] = useState(0);
   const [month, setMonth] = useState(0);
 
@@ -22,20 +19,20 @@ export default function DailyAgenda({
     6: "Sat",
   };
 
-  const months = {
-    0: "Jan",
-    1: "Feb",
-    2: "Mar",
-    3: "Apr",
-    4: "May",
-    5: "Jun",
-    6: "Jul",
-    7: "Aug",
-    8: "Sep",
-    9: "Oct",
-    10: "Nov",
-    11: "Dec",
-  }
+  const months = [
+    {id: 0, name: "January"},
+    {id: 1, name: "February"},
+    {id: 2, name: "March"},
+    {id: 3, name: "April"},
+    {id: 4, name: "May"},
+    {id: 5, name: "June"},
+    {id: 6, name: "July"},
+    {id: 7, name: "August"},
+    {id: 8, name: "September"},
+    {id: 9, name: "October"},
+    {id: 10, name: "November"},
+    {id: 11, name: "December"},
+  ];
 
   const changeDay = (amount) => {
     setDay((prevIndex) => {
@@ -49,6 +46,13 @@ export default function DailyAgenda({
       const newIndex = (prevIndex + amount + 12) % 12;
       return newIndex;
     });
+  };
+
+  const [isOpenMonth, setIsOpenMonth] = useState(false);
+
+  const [selectedMonth, setSelectedMonth] = useState(months[4]);
+  const toggleMonthDropdown = (isOpen) => {
+    setIsOpenMonth(isOpen)
   };
 
   // Helper to calculate grid row based on time
@@ -84,13 +88,14 @@ export default function DailyAgenda({
           <FontAwesomeIcon icon={faArrowRight} className="text-lg" />
         </button>
         <div className="flex flex-col mb-2">
-          <button onClick={() => changeMonth(1)}>
-            <FontAwesomeIcon icon={faArrowUp} className="text-lg" />
-          </button> 
-          <p className="text-sm">{months[month]}</p>
-          <button onClick={() => changeMonth(-1)}>
-            <FontAwesomeIcon icon={faArrowDown} className="text-lg" />
-          </button> 
+          <TrainingCombobox 
+            items={months}
+            label=""
+            onChange={setSelectedMonth}       
+            onToggle={toggleMonthDropdown}
+            dropdownStyle={{ zIndex: 100 }}>
+          </TrainingCombobox>
+
         </div>
       </div>
       {/* Grid layout for time labels and classes */}
