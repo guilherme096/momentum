@@ -14,6 +14,7 @@ const classes = [
       color: "#fbf8cc",
       teacher: "Kevin Gordor",
       date: "2015-05-09",
+      link: "/class-schedule",
     },
 
     {
@@ -21,24 +22,28 @@ const classes = [
       startTime: "1 PM",
       endTime: "3 PM",
       color: "#fde4cf",
+      link: "/class-schedule",
     },
     {
       name: "Yoga",
       startTime: "8 AM",
       endTime: "9 AM",
       color: "#ffcfd2",
+      link: "/class-schedule",
     },
     {
       name: "Pilates",
       startTime: "5 PM",
       endTime: "6 PM",
       color: "#d1ffe6",
+      link: "/class-schedule",
     },
     {
       name: "Boxing",
       startTime: "7 PM",
       endTime: "8 PM",
       color: "#a3c4f3",
+      link: "/class-schedule",
     },
   ],
   [
@@ -47,18 +52,21 @@ const classes = [
       startTime: "10 AM",
       endTime: "11 AM",
       color: "#fbf8cc",
+      link: "/class-schedule",
     },
     {
       name: "Cycling",
       startTime: "1 PM",
       endTime: "3 PM",
       color: "#fde4cf",
+      link: "/class-schedule",
     },
     {
       name: "Pilates",
       startTime: "5 PM",
       endTime: "6 PM",
       color: "#d1ffe6",
+      link: "/class-schedule",
     },
   ],
   [
@@ -67,18 +75,21 @@ const classes = [
       startTime: "10 AM",
       endTime: "11 AM",
       color: "#fbf8cc",
+      link: "/class-schedule",
     },
     {
       name: "Yoga",
       startTime: "8 AM",
       endTime: "9 AM",
       color: "#ffcfd2",
+      link: "/class-schedule",
     },
     {
       name: "Pilates",
       startTime: "5 PM",
       endTime: "6 PM",
       color: "#d1ffe6",
+      link: "/class-schedule",
     },
   ],
   [
@@ -87,18 +98,21 @@ const classes = [
       startTime: "10 AM",
       endTime: "11 AM",
       color: "#fbf8cc",
+      link: "/class-schedule",
     },
     {
       name: "Yoga",
       startTime: "8 AM",
       endTime: "9 AM",
       color: "#ffcfd2",
+      link: "/class-schedule",
     },
     {
       name: "Pilates",
       startTime: "5 PM",
       endTime: "6 PM",
       color: "#d1ffe6",
+      link: "/class-schedule",
     },
   ],
   [
@@ -107,30 +121,35 @@ const classes = [
       startTime: "10 AM",
       endTime: "11 AM",
       color: "#fbf8cc",
+      link: "/class-schedule",
     },
     {
       name: "Cycling",
       startTime: "1 PM",
       endTime: "3 PM",
       color: "#fde4cf",
+      link: "/class-schedule",
     },
     {
       name: "Yoga",
       startTime: "8 AM",
       endTime: "9 AM",
       color: "#ffcfd2",
+      link: "/class-schedule",
     },
     {
       name: "Pilates",
       startTime: "5 PM",
       endTime: "6 PM",
       color: "#d1ffe6",
+      link: "/class-schedule",
     },
     {
       name: "Boxing",
       startTime: "7 PM",
       endTime: "8 PM",
       color: "#a3c4f3",
+      link: "/class-schedule",
     },
   ],
 ];
@@ -157,6 +176,7 @@ export default function ClientScheduleHome() {
                   name={cls.name}
                   date={cls.date}
                   time={cls.startTime + " - " + cls.endTime}
+                  link="/class-schedule"
                 />
               </div>
             ))) || <div className="text-center w-full">No bookings</div>}

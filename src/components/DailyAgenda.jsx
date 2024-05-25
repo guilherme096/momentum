@@ -137,6 +137,7 @@ export default function DailyAgenda({ classes, link, addBookingCallback }) {
               bgColor={aula.color}
               aula={aula}
               schedule={addBookingCallback}
+              link={link}
             />
           );
         })}
