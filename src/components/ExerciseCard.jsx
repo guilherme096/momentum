@@ -1,6 +1,6 @@
 export default function ExerciseCard({ name, sets, reps, weight }) {
   return (
-    <div className="rounded-lg w-full h-fit shadow-md p-5 my-1 flex flex-col bg-base-200">
+    <div className="rounded-lg w-full h-fit shadow-md p-5 flex flex-col bg-base-200 my-4">
       <h3 className="text-xl font-bold mb-1">{name}</h3>
       <div className="w-full flex flex-row justify-between">
         <div>

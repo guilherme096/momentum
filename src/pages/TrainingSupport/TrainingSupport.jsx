@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Camera from "../../components/Camera";
 import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
+import Countdown from "../../components/Countdown";
 
 const exercises = [
   {
@@ -27,6 +28,27 @@ export default function TrainingSupport() {
   const [sets, setSets] = useState([]);
   const [doneExercises, setDoneExercises] = useState([]);
   const [showCamera, setShowCamera] = useState(false);
+  const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setTime((prevTime) => {
+        let { hours, minutes, seconds } = prevTime;
+        seconds += 1;
+        if (seconds === 60) {
+          seconds = 0;
+          minutes += 1;
+        }
+        if (minutes === 60) {
+          minutes = 0;
+          hours += 1;
+        }
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timerInterval);
+  }, []);
 
   useEffect(() => {
     let tempSets = [];
@@ -40,18 +62,25 @@ export default function TrainingSupport() {
     <>
       {showCamera && <Camera />}
       <PageLayout pageName="Training Support">
-        <div className="flex flex-row justify-center w-full items-center " >
+        <div className="flex flex-row justify-center w-full items-center ">
           <div className="stats  w-full">
             <div className="stat place-items-center">
               <div className="stat-title pb-1">Progress</div>
               <div className="stat-value"> {exerciseIndex}/5</div>
             </div>
           </div>
-          <div style={{ borderLeft: '1px solid grey', height: '90px' }} className="pt-4 pb-4"></div>
-          <div className="stats  w-full">
-            <div className="stat place-items-center">
+          <div
+            style={{ borderLeft: "1px solid grey", height: "90px" }}
+            className="pt-4 pb-4"
+          ></div>
+          <div className="stats  w-full overflow-clip">
+            <div className="stat place-items-center p-0">
               <div className="stat-title pb-1">Timer</div>
-              <div className="stat-value"> 00:00</div>
+              <div className="stat-value countdown font-mono text-md p-0 ml-2">
+                <span style={{ "--value": time.hours }}></span>:
+                <span style={{ "--value": time.minutes }}></span>:
+                <span style={{ "--value": time.seconds }}></span>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +132,7 @@ export default function TrainingSupport() {
           <p className="text-md w-fit underline text-primary">Expand List</p>
         </div>
         <div className="px-4 text-lg font-semibold mb-0">Next Exercise</div>
-        
+
         <div className="flex flex-row flex-wrap justify-between items-center mx-3">
           <ExerciseCard
             name="Leg Press"
