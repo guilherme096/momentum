@@ -4,6 +4,7 @@ import ExerciseCard from "../../components/ExerciseCard";
 import { useState } from "react";
 import { useEffect } from "react";
 import Camera from "../../components/Camera";
+import { faBorderNone } from "@fortawesome/free-solid-svg-icons";
 
 const exercises = [
   {
@@ -34,11 +35,28 @@ export default function TrainingSupport() {
     }
     setSets(tempSets);
   }, [currentExercise]);
+
   return (
     <>
       {showCamera && <Camera />}
       <PageLayout pageName="Training Support">
-        <h1 className="text-2xl font-bold">Next Exercise</h1>
+        <div className="flex flex-row justify-center w-full items-center " >
+          <div className="stats  w-full">
+            <div className="stat place-items-center">
+              <div className="stat-title pb-1">Progress</div>
+              <div className="stat-value"> {exerciseIndex}/5</div>
+            </div>
+          </div>
+          <div style={{ borderLeft: '1px solid grey', height: '90px' }} className="pt-4 pb-4"></div>
+          <div className="stats  w-full">
+            <div className="stat place-items-center">
+              <div className="stat-title pb-1">Timer</div>
+              <div className="stat-value"> 00:00</div>
+            </div>
+          </div>
+        </div>
+        <h1 className="text-2xl font-bold mt-5">Next Exercise</h1>
+
         <div className="rounded-lg w-full h-48 shadow-md p-6 my-6 flex flex-row bg-base-200">
           <div className="w-1/2 ">
             <h3 className="text-2xl font-bold mb-3">{currentExercise.name}</h3>
@@ -80,16 +98,12 @@ export default function TrainingSupport() {
             End Training Session
           </button>
         </div>
-        <div className="divider w-full mx-auto"></div>
-        <div className="flex flex-row justify-between items-center w-full my-4 pr-2">
+        <div className="flex flex-row justify-between items-center w-full my-4 pr-2 pt-3">
           <div className="text-2xl font-bold">Exercises</div>
           <p className="text-md w-fit underline text-primary">Expand List</p>
         </div>
-        <div className="flex flex-row px-4 my-6 align-middle items-center text-xl">
-          <div className="text-xl font-semibold mr-4">Progress:</div>
-          <div>{exerciseIndex}/5</div>
-        </div>
         <div className="px-4 text-lg font-semibold mb-0">Next Exercise</div>
+        
         <div className="flex flex-row flex-wrap justify-between items-center mx-3">
           <ExerciseCard
             name="Leg Press"
