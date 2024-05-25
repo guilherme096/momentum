@@ -29,6 +29,7 @@ export default function TrainingSupport() {
   const [doneExercises, setDoneExercises] = useState([]);
   const [showCamera, setShowCamera] = useState(false);
   const [time, setTime] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     const timerInterval = setInterval(() => {
@@ -57,6 +58,13 @@ export default function TrainingSupport() {
     }
     setSets(tempSets);
   }, [currentExercise]);
+
+  const showSuccess = () => {
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false); // Hide notification after 2 seconds
+    }, 2000);
+  };
 
   return (
     <>
@@ -207,6 +215,7 @@ export default function TrainingSupport() {
                     setCurrentExercise(exercises[1]);
                     setExerciseIndex(exerciseIndex + 1);
                     setDoneExercises([...doneExercises, currentExercise]);
+                    showSuccess();
                   }}
                 >
                   Complete
@@ -216,6 +225,29 @@ export default function TrainingSupport() {
           </div>
         </dialog>
       </PageLayout>
+      {success && (
+        <div className="rounded px-6 mx-auto fixed bottom-20  w-full left-0 flex flex-col">
+          <div
+            role="alert"
+            className="alert alert-success w-full p-4 bg-green-100 text-green-800 text-center flex flex-row drop-shadow-lg rounded-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="stroke-current shrink-0 h-6 w-6 inline-block mr-3"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <span className="text-sm">Exercise Completed</span>
+          </div>
+        </div>
+      )}
     </>
   );
 }
