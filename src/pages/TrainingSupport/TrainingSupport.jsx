@@ -21,6 +21,7 @@ const exercises = [
 ];
 
 export default function TrainingSupport() {
+  const [exerciseIndex, setExerciseIndex] = useState(0);
   const [currentExercise, setCurrentExercise] = useState(exercises[0]);
   const [sets, setSets] = useState([]);
   const [doneExercises, setDoneExercises] = useState([]);
@@ -79,8 +80,17 @@ export default function TrainingSupport() {
             End Training Session
           </button>
         </div>
-        <h1 className="text-2xl font-bold mt-6">Upcoming Exercises</h1>
-        <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
+        <div className="divider w-full mx-auto"></div>
+        <div className="flex flex-row justify-between items-center w-full my-4 pr-2">
+          <div className="text-2xl font-bold">Exercises</div>
+          <p className="text-md w-fit underline text-primary">Expand List</p>
+        </div>
+        <div className="flex flex-row px-4 my-6 align-middle items-center text-xl">
+          <div className="text-xl font-semibold mr-4">Progress:</div>
+          <div>{exerciseIndex}/5</div>
+        </div>
+        <div className="px-4 text-lg font-semibold mb-0">Next Exercise</div>
+        <div className="flex flex-row flex-wrap justify-between items-center mx-3">
           <ExerciseCard
             name="Leg Press"
             sets="3"
@@ -88,8 +98,10 @@ export default function TrainingSupport() {
             weight="150kg"
           ></ExerciseCard>
         </div>
-        <h1 className="text-2xl font-bold mt-6">Exercises Done</h1>
-        <div className="flex flex-row flex-wrap justify-between items-center mx-3 pt-3">
+        <div className="px-4 text-lg font-semibold mb-0 mt-6">
+          Exercise Done
+        </div>
+        <div className="flex flex-row flex-wrap justify-between items-center mx-3">
           {doneExercises &&
             doneExercises.map((exercise, index) => (
               <ExerciseCard
@@ -150,6 +162,7 @@ export default function TrainingSupport() {
                   className="btn btn-primary text-white"
                   onClick={() => {
                     setCurrentExercise(exercises[1]);
+                    setExerciseIndex(exerciseIndex + 1);
                     setDoneExercises([...doneExercises, currentExercise]);
                   }}
                 >
