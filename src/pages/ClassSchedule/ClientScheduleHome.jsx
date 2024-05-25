@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DailyAgenda from "../../components/DailyAgenda";
 import AulasCard from "../../components/AulasCard";
 import { useState } from "react";
+import ClassSchedule from "./ClassSchedule";
 
 const classes = [
   [
@@ -11,6 +12,8 @@ const classes = [
       startTime: "10 AM",
       endTime: "11 AM",
       color: "#fbf8cc",
+      teacher: "Kevin Gordor",
+      date: "2015-05-09",
     },
 
     {
@@ -40,6 +43,72 @@ const classes = [
   ],
   [
     {
+      name: "CrossFit",
+      startTime: "10 AM",
+      endTime: "11 AM",
+      color: "#fbf8cc",
+    },
+    {
+      name: "Cycling",
+      startTime: "1 PM",
+      endTime: "3 PM",
+      color: "#fde4cf",
+    },
+    {
+      name: "Pilates",
+      startTime: "5 PM",
+      endTime: "6 PM",
+      color: "#d1ffe6",
+    },
+  ],
+  [
+    {
+      name: "CrossFit",
+      startTime: "10 AM",
+      endTime: "11 AM",
+      color: "#fbf8cc",
+    },
+    {
+      name: "Yoga",
+      startTime: "8 AM",
+      endTime: "9 AM",
+      color: "#ffcfd2",
+    },
+    {
+      name: "Pilates",
+      startTime: "5 PM",
+      endTime: "6 PM",
+      color: "#d1ffe6",
+    },
+  ],
+  [
+    {
+      name: "CrossFit",
+      startTime: "10 AM",
+      endTime: "11 AM",
+      color: "#fbf8cc",
+    },
+    {
+      name: "Yoga",
+      startTime: "8 AM",
+      endTime: "9 AM",
+      color: "#ffcfd2",
+    },
+    {
+      name: "Pilates",
+      startTime: "5 PM",
+      endTime: "6 PM",
+      color: "#d1ffe6",
+    },
+  ],
+  [
+    {
+      name: "CrossFit",
+      startTime: "10 AM",
+      endTime: "11 AM",
+      color: "#fbf8cc",
+    },
+    {
       name: "Cycling",
       startTime: "1 PM",
       endTime: "3 PM",
@@ -63,13 +132,8 @@ const classes = [
       endTime: "8 PM",
       color: "#a3c4f3",
     },
-  ],
+  ]
 ];
-
-const day = {
-  month: "9",
-  week: "Mon",
-};
 
 export default function ClientScheduleHome() {
   const clientBookings =
@@ -100,7 +164,7 @@ export default function ClientScheduleHome() {
         <h1 className="text-xl font-bold mt-2"> All bookings</h1>
       </div>
 
-      <DailyAgenda link={"/class-schedule"} classes={classes} day={day} />
+      <DailyAgenda link="/class-schedule" classes={classes} />
     </PageLayout>
   );
 }

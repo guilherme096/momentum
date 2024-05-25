@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-export default function ConfirmationModal({ isOpen }) {
+export default function ConfirmationModal({ isOpen , aula}) {
   const dialogRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,14 +17,7 @@ export default function ConfirmationModal({ isOpen }) {
 
   const handleConfirm = () => {
     const scheduled_classes = JSON.parse(localStorage.getItem("scheduled_classes")) || [];
-    const new_class = {
-      name: "CrossFit",
-      teacher: "Kevin G.",
-      date: "2024-05-09",
-      startTime: "10 AM",
-      endTime: "11 AM",
-    };
-    localStorage.setItem("scheduled_classes", JSON.stringify([...scheduled_classes, new_class]));
+    localStorage.setItem("scheduled_classes", JSON.stringify([...scheduled_classes, aula]));
     console.log(scheduled_classes);
 
     // Conditionally navigate or close modal
@@ -38,7 +31,7 @@ export default function ConfirmationModal({ isOpen }) {
   return (
     <dialog ref={dialogRef} id="my_modal_2" className="modal">
       <div className="modal-box">
-        <h1 className="font-bold text-xl">CrossFit Class</h1>
+        <h1 className="font-bold text-xl">{aula.name}</h1>
         <p>Are you sure?</p>
         <div className="flex flex-row items-end justify-end -mt-4">
           <form className="modal-action">

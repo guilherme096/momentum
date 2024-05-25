@@ -147,7 +147,7 @@ export default function TrainingSupport() {
                   Cancel
                 </button>
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary text-white"
                   onClick={() => {
                     setCurrentExercise(exercises[1]);
                     setDoneExercises([...doneExercises, currentExercise]);
