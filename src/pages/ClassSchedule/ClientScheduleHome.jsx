@@ -176,7 +176,6 @@ export default function ClientScheduleHome() {
                   name={cls.name}
                   date={cls.date}
                   time={cls.startTime + " - " + cls.endTime}
-                  link="/class-schedule"
                 />
               </div>
             ))) || <div className="text-center w-full">No bookings</div>}
