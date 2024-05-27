@@ -17,7 +17,18 @@ export default {
     },
   },
   daisyui: {
-    themes: ["cupcake"],
+    themes: [
+      {
+        cupcake: {
+          ...require("daisyui/src/theming/themes")["cupcake"],
+          primary: "#1c4f81",
+          error: "#ac3d31",
+          "--rounded-box": "0.55rem", // Default border radius for box components
+          "--rounded-btn": "0.55rem", // Default border radius for button components
+          "--rounded-badge": "0.55rem",
+        },
+      },
+    ],
   },
   plugins: [require("daisyui")],
 };
