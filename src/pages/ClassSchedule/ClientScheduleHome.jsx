@@ -13,7 +13,7 @@ const classes = [
       endTime: "11 AM",
       color: "#fbf8cc",
       teacher: "Kevin Gordor",
-      date: "2015-05-09",
+      date: "2024-05-29",
       link: "/class-schedule",
     },
 

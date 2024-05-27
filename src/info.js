@@ -9,7 +9,9 @@ export const classes = [
         ocupation_math: 12 / 20,
         ocupation: "12/20",
         teacher: "Kevin G.",
-        time: "2pm - 3pm",
+        startTime: "10 AM",
+        endTime: "11 AM",
+        date: "2024-05-29",
     },
     {
         id: 2,

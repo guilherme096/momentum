@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-export default function ConfirmationModal({ isOpen, aula, callback }) {
+export default function ConfirmationModal({ isOpen, aula }) {
   const dialogRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,7 +23,6 @@ export default function ConfirmationModal({ isOpen, aula, callback }) {
       JSON.stringify([...scheduled_classes, aula]),
     );
     console.log(scheduled_classes);
-    callback();
 
     // Conditionally navigate or close modal
     if (location.pathname === "/client-schedule-home") {
