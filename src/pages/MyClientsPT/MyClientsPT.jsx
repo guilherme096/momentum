@@ -87,19 +87,8 @@ export default function MyClientsPT() {
 
   return (
     <PageLayoutPT pageName="My Clients">
-      <div className="flex justify-between items-center">
-        <h1 className="text-xl font-bold"> Scheduled Classes</h1>
-        <Link to="/training-schedule-pt">
-          <button className="btn btn-sm text-white btn-primary">
-            Add Class
-          </button>
-        </Link>
-      </div>
-      <div className="my-6">
-        <PTClientsCalendar />
-      </div>
-      <h1 className="text-xl font-bold mt-8">Upcoming Class</h1>
-      <div className="rounded-lg shadow-lg p-4 bg-base-200 mt-2">
+      <h1 className="text-2xl font-bold mt-2">Upcoming Class</h1>
+      <div className="rounded-lg shadow-lg p-4 bg-base-200 mb-6 mt-2">
         {
           <Fragment>
             <h3 className="text-xl font-bold mb-1">Sara Matos</h3>
@@ -116,7 +105,18 @@ export default function MyClientsPT() {
           </Fragment>
         }
       </div>
-      <h1 className="text-xl font-bold mt-8">Client Details</h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold"> Scheduled Classes</h1>
+        <Link to="/training-schedule-pt">
+          <button className="btn btn-md text-white btn-primary">
+            Add Class
+          </button>
+        </Link>
+      </div>
+      <div className="my-6">
+        <PTClientsCalendar />
+      </div>
+      <h1 className="text-2xl font-bold mt-8">Client Details</h1>
       <div className="flex justify-center items-center mt-4">
         <div className="join">
           <div>
