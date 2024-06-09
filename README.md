@@ -7,6 +7,10 @@
 
 - Link: [Momentum App](https://guilherme096.github.io/momentum/)
 
+## How to run the project
+- `npm install`
+- `npm run dev`
+
 ## Branch Structure
 
 - `main`: Production branch
