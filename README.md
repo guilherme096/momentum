@@ -7,9 +7,8 @@ gym support.
 
 - Hosted Demo: [Momentum App](https://guilherme096.github.io/momentum/)
 
-<video width="320" height="240" controls>
-  <source src="training.mov" type="video/mp4">
-</video>
+https://github.com/guilherme096/momentum/assets/69405307/05d44a28-4357-44cf-b9d4-9fdbd7d46df0
+
 
 ## Context
 
