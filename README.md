@@ -1,4 +1,6 @@
+<p align="center">
 <img src="./docs/logo_azul.png" height="200"/>
+</p>
 
 # Momentum
 
@@ -7,13 +9,22 @@ gym support.
 
 - Hosted Demo: [Momentum App](https://guilherme096.github.io/momentum/)
 
-https://github.com/guilherme096/momentum/assets/69405307/05d44a28-4357-44cf-b9d4-9fdbd7d46df0
-
+<p align="center">
+<img src="./training.gif" height="400" autoplay style="border-radius:10px; shadow-box:10px"/>
+</p>
 
 ## Context
 
 Project developed under the [Human-Computer Interaction](https://www.ua.pt/pt/uc/2484) course
 at [University of Aveiro](https://www.ua.pt/).
+
+## Features
+
+- Gym Authentication (QR Code)
+- Progress Tracking
+- Group Class sheduling
+- Personal Trainer Follow-up
+- Training support
 
 ## Stack
 
