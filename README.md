@@ -10,7 +10,7 @@ gym support.
 - Hosted Demo: [Momentum App](https://guilherme096.github.io/momentum/)
 
 <p align="center">
-<img src="./training.gif" height="400" autoplay style="border-radius:10px; shadow-box:10px"/>
+<img src="./training.gif" height="400" style="border-radius:10px;"/>
 </p>
 
 ## Context
